@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1890UZİ — Cyber Security Operations</title>
+<style>
+:root{--bg:#030609;--panel:#071016;--panel2:#0a151d;--line:#17313b;--cyan:#58f3ff;--green:#55ffa0;--red:#ff506c;--amber:#ffc857;--text:#e8fbff;--muted:#718996}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 70% -10%,#0b3039,transparent 34%),#030609;color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}button,input{font:inherit}
+.auth{position:fixed;inset:0;z-index:100;background:rgba(2,5,7,.94);display:grid;place-items:center;padding:18px}.authbox{width:min(430px,100%);padding:28px;background:#071016;border:1px solid #24505c;border-radius:18px;box-shadow:0 0 80px #000}.brand{font-size:27px;font-weight:950;letter-spacing:4px}.brand b{color:var(--cyan)}.ey{margin-top:18px;color:var(--green);font-size:11px;letter-spacing:3px}.authbox h1{font-size:30px;margin:8px 0}.authbox p{color:var(--muted);font-size:12px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:20px 0}.tabs button,.ghost{background:#09151c;color:var(--muted);border:1px solid var(--line);padding:11px;border-radius:8px;cursor:pointer}.tabs .on{color:var(--cyan);border-color:var(--cyan)}label{display:block;color:var(--muted);font-size:11px;margin:13px 0 6px}.authbox input,.search{width:100%;background:#03080c;color:white;border:1px solid var(--line);padding:12px;border-radius:8px;outline:0}.primary{width:100%;margin-top:16px;background:rgba(88,243,255,.1);color:var(--cyan);border:1px solid var(--cyan);padding:12px;border-radius:8px;font-weight:900;cursor:pointer}.note{font-size:10px!important;line-height:1.5}.hidden{display:none!important}
+
+nav{height:64px;position:sticky;top:0;z-index:30;background:rgba(3,6,9,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 3%;justify-content:space-between}.navbrand{font-weight:950;letter-spacing:3px}.navbrand b{color:var(--cyan)}.navright{display:flex;align-items:center;gap:15px}.online{font-size:11px;color:var(--green)}.user{font-size:12px;color:var(--muted)}.logout{background:none;border:0;color:var(--muted);cursor:pointer}.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 64px)}aside{border-right:1px solid var(--line);padding:22px 14px;background:rgba(5,11,15,.7)}aside small{color:#46616e;font-size:9px;letter-spacing:2px;padding:0 10px}.navitem{display:block;width:100%;padding:12px 11px;margin:4px 0;background:none;border:1px solid transparent;border-radius:8px;color:var(--muted);text-align:left;cursor:pointer}.navitem:hover,.navitem.active{background:#0a171e;color:var(--cyan);border-color:var(--line)}main{padding:25px;max-width:1600px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}.top h1{margin:0;font-size:30px}.top p{margin:5px 0 0;color:var(--muted);font-size:12px}.clock{font:12px ui-monospace;color:var(--green)}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.card{background:linear-gradient(145deg,rgba(10,21,28,.94),rgba(5,11,15,.94));border:1px solid var(--line);border-radius:12px;padding:16px}.label{font-size:9px;letter-spacing:1.5px;color:var(--muted)}.num{font-size:28px;font-weight:900;margin:8px 0 2px}.sub{font-size:10px;color:var(--muted)}.good{color:var(--green)}.cyan{color:var(--cyan)}.red{color:var(--red)}.amber{color:var(--amber)}
+.row{display:grid;grid-template-columns:1.45fr .9fr;gap:11px;margin-top:11px}.cardhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px}.cardhead h2{font-size:14px;margin:0}.badge{font-size:9px;padding:5px 7px;border-radius:20px;border:1px solid var(--line);color:var(--green)}.events{display:flex;flex-direction:column;gap:7px}.event{display:grid;grid-template-columns:62px 1fr 70px;gap:10px;padding:10px;background:#050c11;border:1px solid #10242d;border-radius:8px;font-size:11px}.event .time{color:#526d78}.event .sev{font-size:9px;text-align:right}.critical{color:var(--red)}.medium{color:var(--amber)}.low{color:var(--green)}
+.bar{height:7px;background:#111f27;border-radius:20px;overflow:hidden;margin:8px 0 15px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:20px}.donut{width:150px;height:150px;border-radius:50%;margin:10px auto;background:conic-gradient(var(--green) 0 72%,var(--amber) 72% 91%,var(--red) 91% 100%);display:grid;place-items:center}.donut:after{content:"72%";width:105px;height:105px;border-radius:50%;background:#071016;display:grid;place-items:center;font-size:24px;font-weight:900}.legend{display:flex;justify-content:space-around;font-size:9px;color:var(--muted)}.legend span{color:var(--text)}.map{height:310px;position:relative;overflow:hidden;background:radial-gradient(circle at center,#09272d,transparent 45%),#040a0e;border:1px solid var(--line);border-radius:10px}.map:before{content:"";position:absolute;inset:0;background:linear-gradient(#16404a 1px,transparent 1px),linear-gradient(90deg,#16404a 1px,transparent 1px);background-size:35px 35px;opacity:.22}.route{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform-origin:left;opacity:.45}.dot{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px var(--cyan);animation:pulse 1.8s infinite}.dot.r{background:var(--red);box-shadow:0 0 18px var(--red)}@keyframes pulse{50%{transform:scale(2);opacity:.3}}.terminal{height:270px;background:#020608;border-radius:8px;padding:13px;overflow:auto;font:11px/1.7 ui-monospace,monospace;color:#a7ffd0}.termline{display:block}.terminput{display:flex;border-top:1px solid #18302f;margin-top:10px;padding-top:8px}.terminput input{background:none;border:0;outline:0;color:white;flex:1;font:inherit}.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.tool{padding:13px;border:1px solid var(--line);background:#050c11;border-radius:9px;cursor:pointer}.tool:hover{border-color:#3a6874}.tool b{display:block;margin-bottom:4px}.tool small{color:var(--muted);font-size:10px}.footer{padding:25px 0;color:#526974;font-size:10px;text-align:center}
+@media(max-width:900px){.layout{grid-template-columns:1fr}aside{display:none}.grid4{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
+@media(max-width:520px){main{padding:15px}.grid4{grid-template-columns:1fr 1fr}.num{font-size:22px}.top{display:block}.clock{margin-top:12px}.navright .online{display:none}.tools{grid-template-columns:1fr}.event{grid-template-columns:50px 1fr}.event .sev{display:none}}
+</style>
+</head>
+<body>
+
+<div class="auth" id="auth">
+<div class="authbox">
+<div class="brand">1890<b>UZİ</b></div>
+<div class="ey">SECURE OPERATIONS NETWORK</div>
+<h1 id="authTitle">Giriş yap</h1><p id="authDesc">SOC paneline erişmek için hesabına giriş yap.</p>
+<div class="tabs"><button class="on" id="lt" onclick="mode('login')">GİRİŞ YAP</button><button id="rt" onclick="mode('register')">KAYIT OL</button></div>
+<form id="form"><label>Kullanıcı adı</label><input id="uname" required minlength="3" maxlength="24" autocomplete="username" placeholder="kullanıcı adı"><label>Şifre</label><input id="upass" required minlength="6" type="password" autocomplete="current-password" placeholder="en az 6 karakter"><button class="primary" id="authbtn">GİRİŞ YAP →</button></form>
+<p class="note">Bu sürüm eğitim/demodur. Hesap verileri yalnızca bu tarayıcıda tutulur; gerçek üretim sistemi için sunucu taraflı kimlik doğrulama ve güvenli parola hashleme gerekir.</p>
+</div></div>
+
+<nav><div class="navbrand">1890<b>UZİ</b> <span style="color:#45616d">/ SOC</span></div><div class="navright"><span class="online">● SYSTEM ONLINE</span><span class="user" id="navuser"></span><button class="logout" onclick="logout()">ÇIKIŞ</button></div></nav>
+
+<div class="layout">
+<aside>
+<small>OPERATIONS</small>
+<button class="navitem active" onclick="scrollTo({top:0,behavior:'smooth'})">▦ Overview</button>
+<button class="navitem" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">⚠ Incidents</button>
+<button class="navitem" onclick="document.getElementById('map').scrollIntoView({behavior:'smooth'})">◉ Threat Map</button>
+<button class="navitem" onclick="document.getElementById('lab').scrollIntoView({behavior:'smooth'})">⌁ Security Lab</button>
+<button class="navitem" onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})">◇ Academy</button>
+<br><small>TOOLS</small>
+<button class="navitem" onclick="demoTool('Network posture check')">⌁ Network Check</button>
+<button class="navitem" onclick="demoTool('Log analysis')">≡ Log Analyzer</button>
+<button class="navitem" onclick="demoTool('Password audit')">♙ Password Audit</button>
+</aside>
+
+<main>
+<div class="top"><div><div class="label">1890UZİ SECURITY OPERATIONS CENTER</div><h1>Command Overview</h1><p>Kurumsal güvenlik durumunun eğitim amaçlı simülasyonu.</p></div><div class="clock" id="clock"></div></div>
+
+<div class="grid4">
+<div class="card"><div class="label">SECURITY SCORE</div><div class="num good">98.4</div><div class="sub">▲ 3.1% / 7 days</div></div>
+<div class="card"><div class="label">ACTIVE ENDPOINTS</div><div class="num cyan">247</div><div class="sub">239 healthy · 8 monitoring</div></div>
+<div class="card"><div class="label">EVENTS / 24H</div><div class="num" id="evt">1,284</div><div class="sub">1,273 resolved</div></div>
+<div class="card"><div class="label">RISK STATUS</div><div class="num good">LOW</div><div class="sub">No critical active incidents</div></div>
+</div>
+
+<div class="row">
+<div class="card" id="events"><div class="cardhead"><h2>Security Event Stream</h2><span class="badge">LIVE DEMO</span></div>
+<div class="events" id="eventsList">
+<div class="event"><span class="time">23:14:02</span><span>Authentication anomaly reviewed — user session verified</span><span class="sev low">LOW</span></div>
+<div class="event"><span class="time">23:10:48</span><span>Firewall policy update completed successfully</span><span class="sev low">INFO</span></div>
+<div class="event"><span class="time">22:58:17</span><span>Suspicious login pattern isolated for analysis</span><span class="sev medium">MEDIUM</span></div>
+<div class="event"><span class="time">22:41:09</span><span>Endpoint security heartbeat restored</span><span class="sev low">RESOLVED</span></div>
+</div></div>
+<div class="card"><div class="cardhead"><h2>Risk Distribution</h2><span class="badge">24H</span></div><div class="donut"></div><div class="legend"><span><i class="good">●</i> Low</span><span><i class="amber">●</i> Medium</span><span><i class="red">●</i> High</span></div></div>
+</div>
+
+<div class="row" id="map">
+<div class="card"><div class="cardhead"><h2>Global Threat Activity</h2><span class="badge">SIMULATED</span></div>
+<div class="map"><div class="route" style="left:25%;top:38%;width:38%;transform:rotate(9deg)"></div><div class="route" style="left:55%;top:53%;width:28%;transform:rotate(-20deg)"></div><div class="route" style="left:31%;top:68%;width:40%;transform:rotate(-15deg)"></div>
+<div class="dot" style="left:23%;top:36%"></div><div class="dot r" style="left:62%;top:43%"></div><div class="dot" style="left:76%;top:55%"></div><div class="dot r" style="left:49%;top:70%"></div><div class="dot" style="left:34%;top:61%"></div></div></div>
+<div class="card"><div class="cardhead"><h2>Defense Posture</h2><span class="badge">HEALTHY</span></div>
+<div class="label">NETWORK CONTROLS</div><div class="bar"><i style="width:94%"></i></div><div class="label">ENDPOINT PROTECTION</div><div class="bar"><i style="width:97%"></i></div><div class="label">IDENTITY SECURITY</div><div class="bar"><i style="width:91%"></i></div><div class="label">LOG VISIBILITY</div><div class="bar"><i style="width:88%"></i></div></div>
+</div>
+
+<div class="row" id="lab">
+<div class="card"><div class="cardhead"><h2>Safe Command Terminal</h2><span class="badge">LOCAL SIMULATION</span></div><div class="terminal" id="terminal"><span class="termline">1890UZİ TERMINAL v2.4</span><span class="termline" style="color:#55716b">Authorized educational environment</span><span class="termline">$ help</span><span class="termline">help · status · scan-demo · logs · clear</span></div><div class="terminput"><span>$&nbsp;</span><input id="cmd" placeholder="komut gir..." autocomplete="off"></div></div>
+<div class="card"><div class="cardhead"><h2>Security Toolkit</h2><span class="badge">SAFE</span></div><div class="tools"><div class="tool" onclick="demoTool('Port inventory simulation')"><b>Port Inventory</b><small>Örnek portları analiz et</small></div><div class="tool" onclick="demoTool('Password strength')"><b>Password Check</b><small>Parola gücünü öğren</small></div><div class="tool" onclick="demoTool('HTTP headers')"><b>HTTP Inspector</b><small>Demo HTTP başlıklarını incele</small></div></div></div>
+</div>
+
+<div class="card" id="learn" style="margin-top:11px"><div class="cardhead"><h2>1890UZİ Academy</h2><span class="badge">LEARNING PATH</span></div><div class="tools">
+<div class="tool"><b>01 · Networking</b><small>IP · DNS · TCP · UDP · Ports</small></div><div class="tool"><b>02 · Linux</b><small>Terminal · permissions · processes</small></div><div class="tool"><b>03 · Web Security</b><small>HTTP · sessions · XSS · SQLi concepts</small></div><div class="tool"><b>04 · Cryptography</b><small>Hash · encryption · keys</small></div><div class="tool"><b>05 · Blue Team</b><small>Logs · detection · incident response</small></div>
+</div></div>
+<div class="footer">1890UZİ © 2026 · Security education & defensive simulation · No real targets are contacted.</div>
+</main></div>
+
+<script>
+let authMode='login';
+const auth=document.getElementById('auth'),form=document.getElementById('form');
+function mode(m){authMode=m;document.getElementById('lt').classList.toggle('on',m==='login');document.getElementById('rt').classList.toggle('on',m==='register');document.getElementById('authTitle').textContent=m==='login'?'Giriş yap':'Kayıt ol';document.getElementById('authDesc').textContent=m==='login'?'SOC paneline erişmek için hesabına giriş yap.':'1890UZİ demo hesabını oluştur.';document.getElementById('authbtn').textContent=m==='login'?'GİRİŞ YAP →':'HESAP OLUŞTUR →';}
+function enc(s){return btoa(unescape(encodeURIComponent(s)))} // demo-only storage
+form.addEventListener('submit',e=>{e.preventDefault();let u=uname.value.trim(),p=upass.value;if(authMode==='register'){let k='1890uzi_'+u.toLowerCase();if(localStorage.getItem(k))return alert('Bu kullanıcı zaten kayıtlı.');localStorage.setItem(k,JSON.stringify({u,h:enc(p)}));alert('Hesap oluşturuldu. Şimdi giriş yap.');mode('login');upass.value='';return}let d=localStorage.getItem('1890uzi_'+u.toLowerCase());if(!d)return alert('Kullanıcı bulunamadı. Kayıt olmayı dene.');if(JSON.parse(d).h!==enc(p))return alert('Şifre hatalı.');sessionStorage.setItem('1890uzi_session',u);enter(u)});
+function enter(u){auth.classList.add('hidden');document.getElementById('navuser').textContent='● '+u}
+function logout(){sessionStorage.removeItem('1890uzi_session');auth.classList.remove('hidden');form.reset();mode('login')}
+let s=sessionStorage.getItem('1890uzi_session');if(s)enter(s);
+function clock(){document.getElementById('clock').textContent=new Date().toLocaleString('tr-TR',{hour:'2-digit',minute:'2-digit',second:'2-digit',day:'2-digit',month:'short',year:'numeric'}).toUpperCase()}setInterval(clock,1000);clock();
+function addEvent(){let arr=['Identity event queued for review','Endpoint telemetry normalized','Firewall rule simulation completed','TLS configuration check passed','Demo anomaly correlated'];let sev=['low','low','medium'];let el=document.createElement('div');el.className='event';let t=new Date().toLocaleTimeString('tr-TR');el.innerHTML='<span class="time">'+t+'</span><span>'+arr[Math.floor(Math.random()*arr.length)]+'</span><span class="sev '+sev[Math.floor(Math.random()*sev.length)]">DEMO</span>';document.getElementById('eventsList').prepend(el);if(document.getElementById('eventsList').children.length>7)document.getElementById('eventsList').lastElementChild.remove();document.getElementById('evt').textContent=(1284+Math.floor(Math.random()*15)).toLocaleString('en-US')}setInterval(addEvent,5000);
+const terminal=document.getElementById('terminal'),cmd=document.getElementById('cmd');cmd.addEventListener('keydown',e=>{if(e.key!=='Enter')return;let c=cmd.value.trim().toLowerCase();cmd.value='';let a=document.createElement('span'),b=document.createElement('span');a.className='termline';b.className='termline';a.textContent='$ '+c;if(c==='clear'){terminal.innerHTML='';return}if(c==='help')b.textContent='help · status · scan-demo · logs · clear';else if(c==='status')b.textContent='SYSTEM ONLINE | SAFE MODE | SCORE 98.4';else if(c==='scan-demo')b.textContent='Demo scan: 0 external targets contacted · 4 simulated checks passed.';else if(c==='logs')b.textContent='[INFO] simulated security telemetry stream healthy';else b.textContent='Unknown command. Try: help';terminal.append(a,b);terminal.scrollTop=terminal.scrollHeight});
+function demoTool(n){alert('1890UZİ — '+n+'\n\nBu özellik eğitim amaçlı güvenli simülasyondur. Gerçek sistemlere bağlantı yapılmaz.')}
+</script>
+</body>
+</html>
