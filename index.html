@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1890UZI | Secure Operations</title>
+<title>1890 UZI | Ana Sayfa</title>
 
 <style>
 *{
@@ -12,511 +12,362 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#020a11;
-  color:#e9faff;
+  background:#020611;
+  color:#fff;
   min-height:100vh;
   overflow-x:hidden;
 }
 
-/* ARKA PLAN */
-body::before{
+body:before{
   content:"";
   position:fixed;
   inset:0;
-  z-index:-2;
   background:
-    radial-gradient(circle at 20% 15%,rgba(0,220,255,.13),transparent 30%),
-    radial-gradient(circle at 85% 40%,rgba(0,255,170,.08),transparent 28%),
-    linear-gradient(135deg,#02070c,#03131d 55%,#02080e);
-}
-
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  opacity:.18;
-  background-image:
-    linear-gradient(rgba(50,220,255,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(50,220,255,.08) 1px,transparent 1px);
-  background-size:40px 40px;
+    radial-gradient(circle at 50% 0%,rgba(0,110,255,.20),transparent 35%),
+    radial-gradient(circle at 90% 80%,rgba(0,70,255,.12),transparent 30%);
   pointer-events:none;
+  z-index:-1;
 }
 
 /* ÜST BAR */
-header{
+.topbar{
   position:sticky;
   top:0;
-  z-index:100;
-  padding:17px 22px;
-  border-bottom:1px solid rgba(47,220,255,.18);
-  background:rgba(2,9,15,.88);
-  backdrop-filter:blur(15px);
-}
-
-.nav{
-  max-width:1100px;
-  margin:auto;
+  z-index:50;
+  height:64px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  padding:0 18px;
+  background:rgba(2,6,17,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(0,140,255,.25);
 }
 
 .logo{
-  font-size:25px;
+  font-size:24px;
   font-weight:900;
-  letter-spacing:4px;
+  color:#29a8ff;
+  text-shadow:0 0 15px #008cff;
 }
 
-.logo span{
-  color:#25dcff;
-}
-
-.status{
+.top-icons{
   display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:12px;
-  color:#68ffae;
-  letter-spacing:1px;
+  gap:10px;
 }
 
-.status-dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:#39ff9a;
-  box-shadow:0 0 14px #39ff9a;
-}
-
-/* ANA */
-main{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 18px 60px;
+.icon-btn{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid #174b78;
+  background:#071321;
+  color:#fff;
+  font-size:18px;
 }
 
 /* HERO */
 .hero{
-  position:relative;
-  min-height:500px;
-  display:flex;
-  align-items:center;
+  margin:18px;
+  height:360px;
+  border-radius:25px;
   overflow:hidden;
-  border:1px solid rgba(50,220,255,.35);
-  border-radius:32px;
-  padding:45px;
-  margin-bottom:25px;
-  background:
-    radial-gradient(circle at 80% 30%,rgba(0,220,255,.18),transparent 30%),
-    linear-gradient(135deg,rgba(5,27,40,.97),rgba(2,10,17,.98));
-  box-shadow:
-    0 0 60px rgba(0,190,255,.08),
-    inset 0 0 50px rgba(0,190,255,.025);
+  position:relative;
+  border:1px solid rgba(0,140,255,.4);
+  box-shadow:0 0 35px rgba(0,100,255,.18);
+  background:#050b16;
 }
 
-.hero-grid{
-  position:absolute;
-  right:-80px;
-  top:0;
-  width:55%;
+.hero img{
+  width:100%;
   height:100%;
-  opacity:.35;
-  background:
-    linear-gradient(90deg,transparent,#00d9ff22,transparent),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0 35px,
-      #19dfff18 36px 37px
-    );
-  transform:skewX(-15deg);
+  object-fit:cover;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.9),
+    rgba(0,0,0,.1) 65%,
+    transparent
+  );
 }
 
 .hero-content{
-  position:relative;
+  position:absolute;
+  bottom:22px;
+  left:22px;
+  right:22px;
   z-index:2;
-  max-width:700px;
 }
 
-.eyebrow{
-  color:#54ff9b;
-  font-size:14px;
-  letter-spacing:6px;
-  font-weight:bold;
-  margin-bottom:20px;
+.hero-content h1{
+  font-size:42px;
+  letter-spacing:3px;
+  color:#38aaff;
+  text-shadow:0 0 20px #0077ff;
 }
 
-h1{
-  font-size:clamp(50px,10vw,92px);
-  line-height:.95;
-  letter-spacing:2px;
-  margin-bottom:22px;
+.hero-content p{
+  margin-top:8px;
+  color:#d5e9ff;
 }
 
-h1 span{
-  color:#2bdfff;
-  text-shadow:0 0 25px rgba(43,223,255,.35);
-}
-
-.hero p{
-  color:#94adbb;
-  font-size:20px;
-  line-height:1.7;
-  max-width:650px;
-  margin-bottom:30px;
-}
-
-.buttons{
+/* PROFİL */
+.profile{
+  margin:18px;
+  padding:20px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#081525,#030811);
+  border:1px solid #124d7e;
   display:flex;
-  flex-wrap:wrap;
-  gap:13px;
-}
-
-.btn{
-  border:none;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-flex;
   align-items:center;
-  justify-content:center;
-  min-height:55px;
-  padding:0 25px;
-  border-radius:12px;
-  font-size:15px;
-  font-weight:bold;
-  letter-spacing:1px;
-  transition:.25s;
+  gap:15px;
 }
 
-.btn-primary{
-  background:#2bdcff;
-  color:#021017;
-  box-shadow:0 0 25px rgba(43,220,255,.2);
+.avatar{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #168dff;
+  box-shadow:0 0 20px #0077ff;
 }
 
-.btn-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 35px rgba(43,220,255,.45);
+.profile h2{
+  font-size:22px;
 }
 
-.btn-outline{
-  background:rgba(0,30,42,.45);
-  color:#2bdcff;
-  border:1px solid #2bdcff;
+.verified{
+  color:#219cff;
 }
 
-.btn-outline:hover{
-  background:#2bdcff15;
-  transform:translateY(-3px);
+.status{
+  margin-top:5px;
+  color:#50e08a;
+  font-size:14px;
 }
 
-/* CANLI PANEL */
-.live-panel{
-  margin-top:25px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
+/* BÖLÜM */
+.section{
+  padding:5px 18px 20px;
 }
 
-.live-card{
-  padding:18px;
-  border:1px solid #123545;
-  border-radius:16px;
-  background:#06131caa;
-}
-
-.live-card small{
-  display:block;
-  color:#728b99;
-  margin-bottom:7px;
-  font-size:11px;
-  letter-spacing:1px;
-}
-
-.live-card strong{
-  font-size:19px;
-}
-
-.green{
-  color:#4dffa2;
-}
-
-.cyan{
-  color:#30ddff;
-}
-
-/* BÖLÜM BAŞLIĞI */
 .section-title{
-  margin:65px 5px 22px;
-}
-
-.section-title small{
-  color:#35ddff;
-  letter-spacing:4px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:15px 0;
 }
 
 .section-title h2{
-  font-size:35px;
-  margin-top:8px;
+  font-size:21px;
 }
 
-/* KARTLAR */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:17px;
-}
-
-.card{
-  position:relative;
-  min-height:220px;
-  padding:30px;
-  border:1px solid #143546;
-  border-radius:24px;
-  background:linear-gradient(145deg,#071721,#030c13);
-  overflow:hidden;
-  transition:.3s;
-}
-
-.card::after{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:130px;
-  right:-60px;
-  bottom:-60px;
-  border-radius:50%;
-  background:#1ddfff;
-  opacity:.06;
-  filter:blur(5px);
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:#24dfff;
-  box-shadow:0 15px 40px rgba(0,210,255,.09);
-}
-
-.number{
-  color:#2bdcff;
-  font-size:28px;
-  font-weight:900;
-  margin-bottom:20px;
-}
-
-.card h3{
-  font-size:25px;
-  margin-bottom:13px;
-}
-
-.card p{
-  color:#8199a7;
-  line-height:1.7;
-}
-
-/* SİSTEM DURUMU */
-.dashboard{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:18px;
-}
-
-.system-box{
-  padding:30px;
-  border:1px solid #153747;
-  border-radius:24px;
-  background:#06131c;
-}
-
-.system-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:28px;
-}
-
-.system-head h3{
-  font-size:24px;
-}
-
-.online{
-  color:#55ffa6;
+.section-title span{
+  color:#329fff;
   font-size:13px;
 }
 
-.progress{
-  height:8px;
-  background:#10232d;
-  border-radius:10px;
-  overflow:hidden;
-  margin:12px 0 22px;
-}
-
-.progress span{
-  display:block;
-  width:87%;
-  height:100%;
-  background:#28ddff;
-  box-shadow:0 0 14px #28ddff;
-  border-radius:10px;
-}
-
-.metric{
-  display:flex;
-  justify-content:space-between;
-  color:#829ba8;
-  margin-top:15px;
-}
-
-.metric strong{
-  color:#e8fbff;
-}
-
-/* AKTİVİTE */
-.activity{
-  display:flex;
-  flex-direction:column;
+/* KUTUCUKLAR */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
   gap:12px;
 }
 
-.activity-item{
-  padding:16px;
-  border-left:3px solid #29ddff;
-  border-radius:10px;
-  background:#071820;
+.card{
+  min-height:125px;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#091a2b,#050b14);
+  border:1px solid #16466e;
+  box-shadow:inset 0 0 20px rgba(0,110,255,.04);
+  transition:.2s;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
 }
 
-.activity-item strong{
-  display:block;
-  margin-bottom:5px;
+.card:active{
+  transform:scale(.97);
 }
 
-.activity-item span{
-  color:#708b99;
+.card:before{
+  content:"";
+  position:absolute;
+  width:90px;
+  height:90px;
+  right:-35px;
+  top:-35px;
+  background:#008cff;
+  filter:blur(45px);
+  opacity:.18;
+}
+
+.card .emoji{
+  font-size:30px;
+}
+
+.card h3{
+  margin-top:10px;
+  font-size:16px;
+}
+
+.card p{
+  margin-top:5px;
+  color:#8fa9bf;
   font-size:12px;
 }
 
-/* HIZLI ARAÇLAR */
-.tools{
+/* HABERLER */
+.news{
+  display:flex;
+  gap:12px;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:17px;
+  background:#071321;
+  border:1px solid #123a5c;
+  cursor:pointer;
+}
+
+.news-img{
+  width:90px;
+  height:70px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.news h3{
+  font-size:14px;
+}
+
+.news p{
+  color:#8199ad;
+  font-size:11px;
+  margin-top:6px;
+}
+
+/* SOSYAL */
+.social-card{
+  min-height:105px;
+}
+
+/* ALT BAR */
+.bottom{
+  position:sticky;
+  bottom:0;
+  z-index:40;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  padding:10px 8px;
+  background:rgba(3,8,17,.95);
+  backdrop-filter:blur(15px);
+  border-top:1px solid #123c62;
 }
 
-.tool{
-  text-align:center;
-  padding:25px 12px;
-  border:1px solid #143546;
-  border-radius:18px;
-  background:#06131b;
-  color:#dffaff;
-  cursor:pointer;
-  transition:.25s;
+.bottom button{
+  border:0;
+  background:transparent;
+  color:#8fa8bc;
+  font-size:11px;
 }
 
-.tool:hover{
-  border-color:#28ddff;
-  transform:translateY(-4px);
+.bottom button:first-child{
+  color:#32a8ff;
 }
 
-.icon{
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-.tool span{
+.bottom .bicon{
   display:block;
-  color:#77919f;
-  font-size:12px;
-  margin-top:5px;
+  font-size:21px;
+  margin-bottom:4px;
 }
 
-/* ALT */
-footer{
-  margin-top:70px;
-  padding:30px 10px;
-  border-top:1px solid #102c39;
-  text-align:center;
-  color:#506a77;
-  font-size:13px;
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  backdrop-filter:blur(10px);
+  display:none;
+  align-items:flex-end;
+  z-index:100;
 }
 
-footer strong{
-  color:#2bdcff;
+.modal.active{
+  display:flex;
 }
 
-/* MOBİL */
-@media(max-width:800px){
-  header{
-    padding:15px 17px;
-  }
+.modal-box{
+  width:100%;
+  max-height:85vh;
+  overflow:auto;
+  background:#07111e;
+  border-top:1px solid #168dff;
+  border-radius:25px 25px 0 0;
+  padding:25px 20px;
+  animation:up .25s ease;
+}
 
-  main{
-    padding:18px 12px 45px;
+@keyframes up{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
+}
+
+.modal-box h2{
+  color:#2ba7ff;
+  margin-bottom:15px;
+}
+
+.close{
+  float:right;
+  border:0;
+  background:#14283b;
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:10px;
+}
+
+.modal-box a{
+  display:block;
+  padding:14px;
+  margin:8px 0;
+  border-radius:13px;
+  background:#0b1c2d;
+  border:1px solid #16466e;
+  color:white;
+  text-decoration:none;
+}
+
+/* MASAÜSTÜ */
+@media(min-width:700px){
+  .grid{
+    grid-template-columns:repeat(4,1fr);
   }
 
   .hero{
-    min-height:auto;
-    padding:32px 25px;
-    border-radius:25px;
+    max-width:1000px;
+    margin:25px auto;
   }
 
-  .hero p{
-    font-size:17px;
+  .profile,
+  .section{
+    max-width:1000px;
+    margin-left:auto;
+    margin-right:auto;
   }
 
-  .live-panel{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .dashboard{
-    grid-template-columns:1fr;
-  }
-
-  .tools{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .section-title{
-    margin-top:45px;
-  }
-}
-
-@media(max-width:480px){
-  h1{
-    font-size:55px;
-  }
-
-  .eyebrow{
-    font-size:11px;
-    letter-spacing:4px;
-  }
-
-  .buttons{
-    flex-direction:column;
-  }
-
-  .btn{
-    width:100%;
-  }
-
-  .live-card{
-    padding:14px;
-  }
-
-  .card{
-    min-height:190px;
-    padding:25px;
+  .bottom{
+    max-width:700px;
+    margin:auto;
+    border-radius:20px 20px 0 0;
   }
 }
 </style>
@@ -524,516 +375,342 @@ footer strong{
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">1890<span>UZI</span></div>
+<header class="topbar">
+  <div class="logo">1890 UZI</div>
 
-    <div class="status">
-      <i class="status-dot"></i>
-      SYSTEM ONLINE
-    </div>
+  <div class="top-icons">
+    <button class="icon-btn" onclick="openModal('search')">⌕</button>
+    <button class="icon-btn" onclick="openModal('notifications')">🔔</button>
   </div>
 </header>
 
-<main>
 
-  <!-- HERO -->
-  <section class="hero">
-
-    <div class="hero-grid"></div>
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        SECURE OPERATIONS NETWORK
-      </div>
-
-      <h1>
-        1890<span>UZI</span>
-      </h1>
-
-      <p>
-        Modern güvenlik operasyon merkezi.
-        Sistem durumunu, ağ güvenliğini ve
-        operasyon araçlarını tek bir merkezden yönet.
-      </p>
-
-      <div class="buttons">
-        <a href="#dashboard" class="btn btn-primary">
-          SİSTEME GİR
-        </a>
-
-        <a href="#security" class="btn btn-outline">
-          GÜVENLİK DURUMU
-        </a>
-      </div>
-
-      <div class="live-panel">
-
-        <div class="live-card">
-          <small>SİSTEM</small>
-          <strong class="green">ONLINE</strong>
-        </div>
-
-        <div class="live-card">
-          <small>NETWORK</small>
-          <strong class="cyan">STABLE</strong>
-        </div>
-
-        <div class="live-card">
-          <small>GÜVENLİK</small>
-          <strong class="green">ACTIVE</strong>
-        </div>
-
-        <div class="live-card">
-          <small>UPTIME</small>
-          <strong>99.9%</strong>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- OPERASYONLAR -->
-  <div class="section-title">
-    <small>OPERATIONS CENTER</small>
-    <h2>Kontrol Merkezi</h2>
+<!-- ANA GÖRSEL -->
+<section class="hero">
+  <img src="1890-ana.jpg" alt="1890 UZI">
+  <div class="hero-content">
+    <h1>1890</h1>
+    <p>UZI • Dijital Merkez</p>
   </div>
-
-  <section class="cards">
-
-    <div class="card">
-      <div class="number">01 ·</div>
-      <h3>Network</h3>
-      <p>
-        Ağ bağlantılarını, sistem durumunu ve
-        network altyapısını tek merkezden kontrol et.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="number">02 ·</div>
-      <h3>Security</h3>
-      <p>
-        Güvenlik olaylarını, sistem uyarılarını
-        ve tehdit durumlarını takip et.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="number">03 ·</div>
-      <h3>Operations</h3>
-      <p>
-        Operasyon araçlarına ve sistem bilgilerine
-        hızlı erişim sağla.
-      </p>
-    </div>
-
-  </section>
-
-
-  <!-- SİSTEM DURUMU -->
-  <div class="section-title" id="dashboard">
-    <small>LIVE MONITORING</small>
-    <h2>Sistem Durumu</h2>
-  </div>
-
-  <section class="dashboard">
-
-    <div class="system-box">
-
-      <div class="system-head">
-        <h3>Genel Sistem</h3>
-        <div class="online">● ONLINE</div>
-      </div>
-
-      <div>
-        Sistem performansı
-        <div class="progress">
-          <span></span>
-        </div>
-      </div>
-
-      <div class="metric">
-        <span>CPU</span>
-        <strong>32%</strong>
-      </div>
-
-      <div class="metric">
-        <span>RAM</span>
-        <strong>48%</strong>
-      </div>
-
-      <div class="metric">
-        <span>NETWORK</span>
-        <strong class="green">STABLE</strong>
-      </div>
-
-      <div class="metric">
-        <span>THREAT LEVEL</span>
-        <strong class="green">LOW</strong>
-      </div>
-
-    </div>
-
-
-    <div class="system-box" id="security">
-
-      <div class="system-head">
-        <h3>Aktivite</h3>
-        <div class="online">LIVE</div>
-      </div>
-
-      <div class="activity">
-
-        <div class="activity-item">
-          <strong>System online</strong>
-          <span>Az önce</span>
-        </div>
-
-        <div class="activity-item">
-          <strong>Network stable</strong>
-          <span>2 dakika önce</span>
-        </div>
-
-        <div class="activity-item">
-          <strong>Security scan completed</strong>
-          <span>5 dakika önce</span>
-        </div>
-
-        <div class="activity-item">
-          <strong>No active threats</strong>
-          <span>Şimdi</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- GÜVENLİK -->
-  <div class="section-title">
-    <small>SECURITY STATUS</small>
-    <h2>Güvenlik Merkezi</h2>
-  </div>
-
-  <section class="cards">
-
-    <div class="card">
-      <div class="number">✓</div>
-      <h3>Firewall</h3>
-      <p>
-        Güvenlik duvarı aktif ve sistem trafiği
-        izleniyor.
-      </p>
-      <br>
-      <strong class="green">ACTIVE</strong>
-    </div>
-
-    <div class="card">
-      <div class="number">✓</div>
-      <h3>Threat Monitor</h3>
-      <p>
-        Aktif tehdit veya kritik uyarı
-        bulunmuyor.
-      </p>
-      <br>
-      <strong class="green">CLEAR</strong>
-    </div>
-
-    <div class="card">
-      <div class="number">✓</div>
-      <h3>Access Control</h3>
-      <p>
-        Yetkilendirme ve erişim kontrolleri
-        çalışıyor.
-      </p>
-      <br>
-      <strong class="green">SECURE</strong>
-    </div>
-
-  </section>
-
-
-  <!-- ARAÇLAR -->
-  <div class="section-title">
-    <small>QUICK ACCESS</small>
-    <h2>Hızlı Araçlar</h2>
-  </div>
-
-  <section class="tools">
-
-    <div class="tool" onclick="showMessage('Network kontrolü açılıyor...')">
-      <div class="icon">🌐</div>
-      Network
-      <span>Bağlantı kontrolü</span>
-    </div>
-
-    <div class="tool" onclick="showMessage('Security merkezi açılıyor...')">
-      <div class="icon">🛡️</div>
-      Security
-      <span>Güvenlik kontrolü</span>
-    </div>
-
-    <div class="tool" onclick="showMessage('System bilgileri hazırlanıyor...')">
-      <div class="icon">⚙️</div>
-      System
-      <span>Sistem bilgileri</span>
-    </div>
-
-    <div class="tool" onclick="showMessage('Diagnostics başlatılıyor...')">
-      <div class="icon">⚡</div>
-      Diagnostics
-      <span>Sistem taraması</span>
-    </div>
-
-  </section>
-
-
-  <footer>
-    <strong>1890UZI</strong> · Secure Operations Network
-    <br><br>
-    System protected · All systems operational
-  </footer>
-
-</main>
-
-
-<script>
-function showMessage(message){
-  alert(message);
-}
-</script>
-<!-- 1890UZI DEMO ARAÇLARI -->
-<section class="demo-zone">
-
-<style>
-.demo-zone{
-  margin:50px 18px;
-}
-
-.demo-zone h2{
-  color:#39dcff;
-  font-size:30px;
-  margin-bottom:8px;
-}
-
-.demo-zone .demo-desc{
-  color:#8fa7b8;
-  line-height:1.6;
-  margin-bottom:25px;
-}
-
-.demo-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
-}
-
-.demo-card{
-  background:linear-gradient(145deg,#071923,#020a10);
-  border:1px solid #174255;
-  border-radius:20px;
-  padding:22px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-.demo-card h3{
-  color:#eafaff;
-  margin:8px 0;
-}
-
-.demo-icon{
-  font-size:35px;
-}
-
-.demo-card p{
-  color:#849baa;
-  line-height:1.5;
-  font-size:14px;
-}
-
-.demo-btn{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border-radius:12px;
-  border:1px solid #32d9ff;
-  background:#071923;
-  color:#38dcff;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.demo-btn:hover{
-  background:#0c2c3b;
-}
-
-.demo-status{
-  margin-top:12px;
-  padding:10px;
-  border-radius:10px;
-  background:#031017;
-  color:#4dff9a;
-  font-size:13px;
-  display:none;
-}
-
-.demo-status.show{
-  display:block;
-}
-
-.demo-token{
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  border-radius:10px;
-  background:#01070b;
-  color:#45ddff;
-  font-family:monospace;
-  word-break:break-all;
-}
-</style>
-
-<h2>◈ DEMO ARAÇLARI</h2>
-
-<div class="demo-desc">
-  Sosyal platformlar ve servisler için güvenli
-  demo/simülasyon merkezi.
-</div>
-
-<div class="demo-grid">
-
-  <div class="demo-card">
-    <div class="demo-icon">🔵</div>
-    <h3>Facebook</h3>
-    <p>Facebook bağlantı ekranı demo modu.</p>
-    <button class="demo-btn" onclick="run1890Demo('fb')">
-      DEMO BAŞLAT
-    </button>
-    <div id="fb" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">🟣</div>
-    <h3>Instagram</h3>
-    <p>Instagram bağlantı ekranı demo modu.</p>
-    <button class="demo-btn" onclick="run1890Demo('ig')">
-      DEMO BAŞLAT
-    </button>
-    <div id="ig" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">🟢</div>
-    <h3>WhatsApp</h3>
-    <p>WhatsApp doğrulama ekranı simülasyonu.</p>
-    <button class="demo-btn" onclick="run1890Demo('wa')">
-      DEMO BAŞLAT
-    </button>
-    <div id="wa" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">🎮</div>
-    <h3>WePlay</h3>
-    <p>WePlay hesap bağlantısı için demo ekranı.</p>
-    <button class="demo-btn" onclick="run1890Demo('weplay')">
-      DEMO BAŞLAT
-    </button>
-    <div id="weplay" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">📱</div>
-    <h3>SMS Onay</h3>
-    <p>Gerçek SMS göndermeyen doğrulama simülasyonu.</p>
-    <button class="demo-btn" onclick="sms1890Demo()">
-      DEMO SMS ÜRET
-    </button>
-    <div id="sms1890" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">💬</div>
-    <h3>Discord</h3>
-    <p>Discord kullanıcı bağlantısı için demo ekranı.</p>
-    <button class="demo-btn" onclick="run1890Demo('discord')">
-      DEMO BAŞLAT
-    </button>
-    <div id="discord" class="demo-status"></div>
-  </div>
-
-  <div class="demo-card">
-    <div class="demo-icon">🔑</div>
-    <h3>Discord Token Demo</h3>
-    <p>
-      Gerçek token kullanmaz.
-      Yalnızca sahte demo değeri üretir.
-    </p>
-
-    <button class="demo-btn" onclick="token1890Demo()">
-      DEMO TOKEN ÜRET
-    </button>
-
-    <div id="token1890" class="demo-token"></div>
-    <div id="tokenStatus1890" class="demo-status"></div>
-  </div>
-
-</div>
-
-<script>
-function run1890Demo(id){
-
-  const box=document.getElementById(id);
-
-  box.textContent=
-    "✓ DEMO AKTİF — gerçek hesap bağlantısı yapılmadı.";
-
-  box.classList.add("show");
-}
-
-function sms1890Demo(){
-
-  const box=document.getElementById("sms1890");
-
-  const code=
-    Math.floor(100000 + Math.random()*900000);
-
-  box.textContent=
-    "✓ DEMO SMS KODU: "+code+
-    " — gerçek SMS gönderilmedi.";
-
-  box.classList.add("show");
-}
-
-function token1890Demo(){
-
-  const tokenBox=
-    document.getElementById("token1890");
-
-  const status=
-    document.getElementById("tokenStatus1890");
-
-  tokenBox.textContent=
-    "DEMO_1890UZI_"+Math.random()
-    .toString(36)
-    .substring(2,14)
-    .toUpperCase();
-
-  tokenBox.style.display="block";
-
-  status.textContent=
-    "✓ Sahte demo token oluşturuldu. Gerçek Discord tokenı kullanılmadı.";
-
-  status.classList.add("show");
-}
-</script>
-
 </section>
+
+
+<!-- PROFİL -->
+<section class="profile">
+  <img class="avatar" src="profil.jpg" alt="UZI">
+  <div>
+    <h2>UZI <span class="verified">✓</span></h2>
+    <div class="status">● Çevrimiçi</div>
+  </div>
+</section>
+
+
+<!-- HIZLI ERİŞİM -->
+<section class="section">
+  <div class="section-title">
+    <h2>Hızlı Erişim</h2>
+    <span>1890 SYSTEM</span>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" onclick="openModal('profile')">
+      <div class="emoji">👤</div>
+      <h3>Profil</h3>
+      <p>Profil bilgilerini görüntüle</p>
+    </div>
+
+    <div class="card" onclick="openModal('messages')">
+      <div class="emoji">💬</div>
+      <h3>Mesajlar</h3>
+      <p>Sohbet merkezine gir</p>
+    </div>
+
+    <div class="card" onclick="openModal('gallery')">
+      <div class="emoji">🖼️</div>
+      <h3>Galeri</h3>
+      <p>1890 görselleri</p>
+    </div>
+
+    <div class="card" onclick="openModal('news')">
+      <div class="emoji">📰</div>
+      <h3>Güncel Haberler</h3>
+      <p>Son gelişmeleri görüntüle</p>
+    </div>
+
+    <div class="card" onclick="openModal('settings')">
+      <div class="emoji">⚙️</div>
+      <h3>Ayarlar</h3>
+      <p>Sistem ayarları</p>
+    </div>
+
+    <div class="card" onclick="openModal('security')">
+      <div class="emoji">🔐</div>
+      <h3>Güvenlik</h3>
+      <p>Güvenlik merkezi</p>
+    </div>
+
+    <div class="card" onclick="openModal('contact')">
+      <div class="emoji">📞</div>
+      <h3>İletişim</h3>
+      <p>Bizimle iletişime geç</p>
+    </div>
+
+    <div class="card" onclick="openModal('system')">
+      <div class="emoji">💻</div>
+      <h3>1890 System</h3>
+      <p>Dijital kontrol merkezi</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SOSYAL MEDYA -->
+<section class="section">
+  <div class="section-title">
+    <h2>Sosyal Medya</h2>
+    <span>TÜMÜ</span>
+  </div>
+
+  <div class="grid">
+
+    <div class="card social-card" onclick="go('https://instagram.com/')">
+      <div class="emoji">📸</div>
+      <h3>Instagram</h3>
+      <p>Instagram'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://www.tiktok.com/')">
+      <div class="emoji">🎵</div>
+      <h3>TikTok</h3>
+      <p>TikTok'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://youtube.com/')">
+      <div class="emoji">▶️</div>
+      <h3>YouTube</h3>
+      <p>YouTube'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://x.com/')">
+      <div class="emoji">𝕏</div>
+      <h3>X</h3>
+      <p>X platformuna git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://web.telegram.org/')">
+      <div class="emoji">✈️</div>
+      <h3>Telegram</h3>
+      <p>Telegram'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://web.whatsapp.com/')">
+      <div class="emoji">💚</div>
+      <h3>WhatsApp</h3>
+      <p>WhatsApp'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://www.facebook.com/')">
+      <div class="emoji">🔵</div>
+      <h3>Facebook</h3>
+      <p>Facebook'a git</p>
+    </div>
+
+    <div class="card social-card" onclick="go('https://github.com/')">
+      <div class="emoji">🐙</div>
+      <h3>GitHub</h3>
+      <p>GitHub'a git</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HABERLER -->
+<section class="section">
+  <div class="section-title">
+    <h2>Güncel Haberler</h2>
+    <span>SON GELİŞMELER</span>
+  </div>
+
+  <div class="news" onclick="openModal('news')">
+    <img class="news-img" src="1890-oda.jpg">
+    <div>
+      <h3>1890 Dijital Merkez Güncellendi</h3>
+      <p>Yeni sistem ve özellikler aktif.</p>
+    </div>
+  </div>
+
+  <div class="news" onclick="openModal('news')">
+    <img class="news-img" src="1890-logo.jpg">
+    <div>
+      <h3>Yeni 1890 Tasarım Sistemi</h3>
+      <p>Modern arayüz ve yeni kutucuk sistemi.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ALT MENÜ -->
+<nav class="bottom">
+  <button onclick="scrollToTop()">
+    <span class="bicon">⌂</span>
+    Ana Sayfa
+  </button>
+
+  <button onclick="openModal('messages')">
+    <span class="bicon">💬</span>
+    Sohbet
+  </button>
+
+  <button onclick="openModal('settings')">
+    <span class="bicon">⚙</span>
+    Ayarlar
+  </button>
+
+  <button onclick="openModal('profile')">
+    <span class="bicon">👤</span>
+    Profil
+  </button>
+</nav>
+
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeOutside(event)">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+
+<script>
+
+function go(url){
+  window.open(url,"_blank");
+}
+
+function scrollToTop(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+function openModal(type){
+
+  const content=document.getElementById("modalContent");
+
+  const pages={
+
+    profile:`
+      <h2>👤 Profil</h2>
+      <p><b>UZI</b></p>
+      <p style="color:#7f9bb0;margin-top:10px">
+      1890 dijital profil merkezi.
+      </p>
+      <a href="#">Profil bilgilerini düzenle</a>
+      <a href="#">Profil fotoğrafını değiştir</a>
+    `,
+
+    messages:`
+      <h2>💬 Mesajlar</h2>
+      <a href="#">Yeni sohbet</a>
+      <a href="#">Sohbetler</a>
+      <a href="#">Arşivlenmiş mesajlar</a>
+    `,
+
+    gallery:`
+      <h2>🖼️ 1890 Galeri</h2>
+      <img src="1890-ana.jpg"
+      style="width:100%;border-radius:15px;margin-top:10px">
+      <img src="1890-oda.jpg"
+      style="width:100%;border-radius:15px;margin-top:10px">
+      <img src="1890-logo.jpg"
+      style="width:100%;border-radius:15px;margin-top:10px">
+    `,
+
+    news:`
+      <h2>📰 Güncel Haberler</h2>
+      <a href="#">1890 sistem güncellemesi</a>
+      <a href="#">Yeni sosyal medya merkezi</a>
+      <a href="#">Yeni galeri sistemi</a>
+      <a href="#">Yeni profil sistemi</a>
+    `,
+
+    settings:`
+      <h2>⚙️ Ayarlar</h2>
+      <a href="#">Profil Ayarları</a>
+      <a href="#">Bildirimler</a>
+      <a href="#">Gizlilik</a>
+      <a href="#">Güvenlik</a>
+      <a href="#">Tema</a>
+    `,
+
+    security:`
+      <h2>🔐 Güvenlik Merkezi</h2>
+      <p style="color:#61df8d">● Sistem bağlantısı aktif</p>
+      <a href="#">Şifre ve güvenlik</a>
+      <a href="#">Oturumlar</a>
+      <a href="#">Gizlilik seçenekleri</a>
+    `,
+
+    contact:`
+      <h2>📞 İletişim</h2>
+      <a href="mailto:1890@example.com">E-posta Gönder</a>
+      <a href="#">Destek Merkezi</a>
+    `,
+
+    system:`
+      <h2>💻 1890 System</h2>
+      <p style="color:#7f9bb0">
+      Dijital merkez aktif.
+      </p>
+      <a href="#">Sistem Durumu</a>
+      <a href="#">Güncellemeler</a>
+      <a href="#">Hakkında</a>
+    `,
+
+    search:`
+      <h2>🔎 Arama</h2>
+      <input
+        placeholder="Ara..."
+        style="
+        width:100%;
+        padding:15px;
+        border-radius:12px;
+        border:1px solid #18517d;
+        background:#020a13;
+        color:white;
+        outline:none;
+        ">
+    `,
+
+    notifications:`
+      <h2>🔔 Bildirimler</h2>
+      <a href="#">Yeni sistem güncellemesi mevcut</a>
+      <a href="#">1890 galeri güncellendi</a>
+      <a href="#">Yeni sosyal medya merkezi aktif</a>
+    `
+  };
+
+  content.innerHTML=pages[type] || pages.system;
+
+  document.getElementById("modal").classList.add("active");
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+
+function closeOutside(e){
+  if(e.target.id==="modal"){
+    closeModal();
+  }
+}
+
+</script>
+
 </body>
   </html>
