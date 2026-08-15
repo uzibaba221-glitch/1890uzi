@@ -808,6 +808,232 @@ function showMessage(message){
   alert(message);
 }
 </script>
+<!-- 1890UZI DEMO ARAÇLARI -->
+<section class="demo-zone">
 
+<style>
+.demo-zone{
+  margin:50px 18px;
+}
+
+.demo-zone h2{
+  color:#39dcff;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+.demo-zone .demo-desc{
+  color:#8fa7b8;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+
+.demo-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+
+.demo-card{
+  background:linear-gradient(145deg,#071923,#020a10);
+  border:1px solid #174255;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.demo-card h3{
+  color:#eafaff;
+  margin:8px 0;
+}
+
+.demo-icon{
+  font-size:35px;
+}
+
+.demo-card p{
+  color:#849baa;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.demo-btn{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border-radius:12px;
+  border:1px solid #32d9ff;
+  background:#071923;
+  color:#38dcff;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.demo-btn:hover{
+  background:#0c2c3b;
+}
+
+.demo-status{
+  margin-top:12px;
+  padding:10px;
+  border-radius:10px;
+  background:#031017;
+  color:#4dff9a;
+  font-size:13px;
+  display:none;
+}
+
+.demo-status.show{
+  display:block;
+}
+
+.demo-token{
+  display:none;
+  margin-top:12px;
+  padding:12px;
+  border-radius:10px;
+  background:#01070b;
+  color:#45ddff;
+  font-family:monospace;
+  word-break:break-all;
+}
+</style>
+
+<h2>◈ DEMO ARAÇLARI</h2>
+
+<div class="demo-desc">
+  Sosyal platformlar ve servisler için güvenli
+  demo/simülasyon merkezi.
+</div>
+
+<div class="demo-grid">
+
+  <div class="demo-card">
+    <div class="demo-icon">🔵</div>
+    <h3>Facebook</h3>
+    <p>Facebook bağlantı ekranı demo modu.</p>
+    <button class="demo-btn" onclick="run1890Demo('fb')">
+      DEMO BAŞLAT
+    </button>
+    <div id="fb" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">🟣</div>
+    <h3>Instagram</h3>
+    <p>Instagram bağlantı ekranı demo modu.</p>
+    <button class="demo-btn" onclick="run1890Demo('ig')">
+      DEMO BAŞLAT
+    </button>
+    <div id="ig" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">🟢</div>
+    <h3>WhatsApp</h3>
+    <p>WhatsApp doğrulama ekranı simülasyonu.</p>
+    <button class="demo-btn" onclick="run1890Demo('wa')">
+      DEMO BAŞLAT
+    </button>
+    <div id="wa" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">🎮</div>
+    <h3>WePlay</h3>
+    <p>WePlay hesap bağlantısı için demo ekranı.</p>
+    <button class="demo-btn" onclick="run1890Demo('weplay')">
+      DEMO BAŞLAT
+    </button>
+    <div id="weplay" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">📱</div>
+    <h3>SMS Onay</h3>
+    <p>Gerçek SMS göndermeyen doğrulama simülasyonu.</p>
+    <button class="demo-btn" onclick="sms1890Demo()">
+      DEMO SMS ÜRET
+    </button>
+    <div id="sms1890" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">💬</div>
+    <h3>Discord</h3>
+    <p>Discord kullanıcı bağlantısı için demo ekranı.</p>
+    <button class="demo-btn" onclick="run1890Demo('discord')">
+      DEMO BAŞLAT
+    </button>
+    <div id="discord" class="demo-status"></div>
+  </div>
+
+  <div class="demo-card">
+    <div class="demo-icon">🔑</div>
+    <h3>Discord Token Demo</h3>
+    <p>
+      Gerçek token kullanmaz.
+      Yalnızca sahte demo değeri üretir.
+    </p>
+
+    <button class="demo-btn" onclick="token1890Demo()">
+      DEMO TOKEN ÜRET
+    </button>
+
+    <div id="token1890" class="demo-token"></div>
+    <div id="tokenStatus1890" class="demo-status"></div>
+  </div>
+
+</div>
+
+<script>
+function run1890Demo(id){
+
+  const box=document.getElementById(id);
+
+  box.textContent=
+    "✓ DEMO AKTİF — gerçek hesap bağlantısı yapılmadı.";
+
+  box.classList.add("show");
+}
+
+function sms1890Demo(){
+
+  const box=document.getElementById("sms1890");
+
+  const code=
+    Math.floor(100000 + Math.random()*900000);
+
+  box.textContent=
+    "✓ DEMO SMS KODU: "+code+
+    " — gerçek SMS gönderilmedi.";
+
+  box.classList.add("show");
+}
+
+function token1890Demo(){
+
+  const tokenBox=
+    document.getElementById("token1890");
+
+  const status=
+    document.getElementById("tokenStatus1890");
+
+  tokenBox.textContent=
+    "DEMO_1890UZI_"+Math.random()
+    .toString(36)
+    .substring(2,14)
+    .toUpperCase();
+
+  tokenBox.style.display="block";
+
+  status.textContent=
+    "✓ Sahte demo token oluşturuldu. Gerçek Discord tokenı kullanılmadı.";
+
+  status.classList.add("show");
+}
+</script>
+
+</section>
 </body>
   </html>
