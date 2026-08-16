@@ -1,1099 +1,366 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#020611">
-<title>1890 UZI | Digital Center</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020817">
+<title>1890 UZI | Dijital Center</title>
 
 <style>
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#06498a 0%,#020611 38%,#01030a 100%);
-color:#f4f8ff;
-min-height:100vh;
-padding-bottom:90px;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,#064b91 0%,#031b36 35%,#020817 75%);
+  color:#f4f8ff;
+  min-height:100vh;
 }
 
-a{
-text-decoration:none;
-color:inherit;
-}
-
-button,input{
-font-family:inherit;
-}
-
-:root{
---blue:#1597ff;
---cyan:#00d9ff;
---green:#32e875;
---card:#071426;
---border:rgba(21,151,255,.42);
---muted:#91a3bd;
-}
-
-/* TOP BAR */
-
-.topbar{
-height:74px;
-position:sticky;
-top:0;
-z-index:100;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 18px;
-background:rgba(2,6,17,.94);
-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(21,151,255,.4);
+header{
+  height:145px;
+  padding:30px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:2px solid #1266ad;
+  background:#020b1a;
 }
 
 .logo{
-font-size:28px;
-font-weight:900;
-color:#20a2ff;
-letter-spacing:1px;
-text-shadow:0 0 25px #008cff;
+  font-size:42px;
+  font-weight:900;
+  color:#249cff;
+  text-shadow:0 0 22px #087cff;
 }
 
 .top-buttons{
-display:flex;
-gap:9px;
+  display:flex;
+  gap:14px;
 }
 
-.icon-btn{
-width:50px;
-height:50px;
-border-radius:17px;
-border:1px solid var(--border);
-background:#061020;
-color:white;
-font-size:22px;
-cursor:pointer;
+.top-btn{
+  width:70px;
+  height:70px;
+  border:2px solid #147bd2;
+  border-radius:22px;
+  background:#06172d;
+  color:white;
+  font-size:32px;
 }
 
-/* MAIN */
-
-.container{
-width:min(1100px,94%);
-margin:auto;
+.main{
+  padding:48px 22px 90px;
 }
-
-/* HERO */
 
 .hero{
-margin-top:24px;
-min-height:590px;
-position:relative;
-overflow:hidden;
-border-radius:32px;
-border:1px solid #1597ff;
-
-background:
-linear-gradient(
-0deg,
-rgba(1,4,12,.98),
-rgba(1,4,12,.15)
-),
-url("images/1890-cover.jpg") center/cover no-repeat;
-
-box-shadow:
-0 0 55px rgba(0,119,255,.24);
+  min-height:1050px;
+  max-width:720px;
+  margin:auto;
+  padding:60px 40px 45px;
+  border:2px solid #1594ff;
+  border-radius:55px;
+  background:
+    linear-gradient(180deg,rgba(5,43,80,.95),rgba(1,11,27,.98));
+  box-shadow:
+    0 0 30px rgba(0,132,255,.18),
+    inset 0 0 40px rgba(0,112,255,.08);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
 }
 
-.hero-content{
-position:absolute;
-left:28px;
-right:28px;
-bottom:28px;
-}
-
-.badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:10px 15px;
-border-radius:30px;
-border:1px solid rgba(0,217,255,.55);
-background:rgba(5,25,48,.82);
-color:#75caff;
-font-size:13px;
-font-weight:bold;
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  width:max-content;
+  padding:15px 27px;
+  margin-bottom:45px;
+  border:2px solid #087fa9;
+  border-radius:40px;
+  color:#6bc7ff;
+  font-size:22px;
+  font-weight:bold;
 }
 
 .dot{
-width:9px;
-height:9px;
-background:var(--green);
-border-radius:50%;
-box-shadow:0 0 12px var(--green);
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#20ef70;
+  box-shadow:0 0 15px #20ef70;
 }
 
-.hero h1{
-margin-top:18px;
-font-size:72px;
-line-height:.9;
-color:#239eff;
-text-shadow:0 0 25px #008cff;
+.number{
+  font-size:105px;
+  font-weight:900;
+  color:#239cff;
+  text-shadow:0 0 30px rgba(0,137,255,.65);
+  letter-spacing:8px;
 }
 
-.hero p{
-margin-top:12px;
-font-size:18px;
-color:#e0ebf8;
+.subtitle{
+  font-size:32px;
+  margin:15px 0 45px;
+  color:#e8f1ff;
 }
 
-.hero-buttons{
-display:flex;
-gap:10px;
-margin-top:22px;
-flex-wrap:wrap;
+.buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 19px;
-border-radius:18px;
-font-weight:bold;
-cursor:pointer;
+  flex:1;
+  min-width:210px;
+  padding:22px 25px;
+  border-radius:38px;
+  border:2px solid #1689ee;
+  background:#071a32;
+  color:white;
+  font-size:23px;
+  font-weight:bold;
 }
 
-.primary{
-border:0;
-background:#1597ff;
-color:white;
-box-shadow:0 7px 25px rgba(0,130,255,.3);
+.btn.primary{
+  background:#1795f5;
+  box-shadow:0 0 25px rgba(0,145,255,.35);
 }
-
-.secondary{
-background:rgba(2,10,23,.8);
-color:white;
-border:1px solid #1597ff;
-}
-
-/* ID SYSTEM */
-
-.id-system{
-margin-top:18px;
-padding:22px;
-border-radius:26px;
-background:
-linear-gradient(145deg,#09203b,#030914);
-border:1px solid #1597ff;
-box-shadow:0 0 35px rgba(0,130,255,.15);
-}
-
-.id-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-}
-
-.id-title{
-font-size:22px;
-font-weight:900;
-color:#24a2ff;
-}
-
-.member{
-font-size:11px;
-padding:7px 10px;
-border-radius:20px;
-background:rgba(21,151,255,.15);
-border:1px solid #1597ff;
-color:#55b6ff;
-}
-
-.owner-badge{
-font-size:11px;
-padding:7px 10px;
-border-radius:20px;
-background:rgba(50,232,117,.12);
-border:1px solid #32e875;
-color:#32e875;
-display:none;
-}
-
-.id-card{
-margin-top:17px;
-padding:18px;
-border-radius:21px;
-background:#050d1a;
-border:1px solid rgba(21,151,255,.3);
-}
-
-.id-user{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.avatar{
-width:72px;
-height:72px;
-border-radius:50%;
-border:3px solid #1597ff;
-
-background:
-url("images/uzi-profile.jpg") center/cover no-repeat,
-linear-gradient(145deg,#063b75,#020611);
-
-box-shadow:0 0 25px rgba(0,140,255,.45);
-overflow:hidden;
-}
-
-.avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:none;
-}
-
-.user-name{
-font-size:22px;
-font-weight:bold;
-}
-
-.user-id{
-margin-top:5px;
-font-size:12px;
-color:#7991aa;
-}
-
-.key-box{
-margin-top:16px;
-padding:13px;
-border-radius:14px;
-background:#020812;
-border:1px dashed #1597ff;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:10px;
-}
-
-.key{
-font-family:monospace;
-font-weight:bold;
-font-size:14px;
-color:#32c0ff;
-word-break:break-all;
-}
-
-.small-btn{
-border:1px solid #1597ff;
-background:#081a30;
-color:white;
-padding:9px 11px;
-border-radius:11px;
-cursor:pointer;
-font-size:11px;
-}
-
-.id-actions{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:9px;
-margin-top:12px;
-}
-
-.action-btn{
-padding:13px 8px;
-border-radius:14px;
-border:1px solid rgba(21,151,255,.35);
-background:#071426;
-color:white;
-cursor:pointer;
-font-size:12px;
-font-weight:bold;
-}
-
-/* SECTION */
 
 .section{
-margin-top:32px;
+  max-width:720px;
+  margin:35px auto 0;
+  padding:30px;
+  border:2px solid #116db7;
+  border-radius:30px;
+  background:#031326;
 }
 
-.section-title{
-font-size:24px;
-margin-bottom:15px;
+.section h2{
+  color:#54baff;
+  font-size:28px;
+  margin-bottom:25px;
 }
-
-.section-title span{
-color:#209eff;
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:13px;
-}
-
-.card{
-min-height:145px;
-padding:19px;
-border-radius:23px;
-background:linear-gradient(145deg,#0a1d34,#030914);
-border:1px solid var(--border);
-transition:.2s;
-}
-
-.card:active{
-transform:scale(.97);
-}
-
-.card-icon{
-font-size:31px;
-margin-bottom:11px;
-}
-
-.card h3{
-font-size:17px;
-}
-
-.card p{
-margin-top:7px;
-font-size:13px;
-line-height:1.45;
-color:var(--muted);
-}
-
-/* STATS */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-}
-
-.stat{
-padding:20px 7px;
-text-align:center;
-border-radius:19px;
-background:#071426;
-border:1px solid rgba(21,151,255,.3);
-}
-
-.stat b{
-display:block;
-font-size:25px;
-color:#219fff;
-}
-
-.stat span{
-font-size:10px;
-color:#8499b2;
-}
-
-/* MUSIC */
-
-.music{
-padding:20px;
-border-radius:24px;
-background:linear-gradient(135deg,#081c35,#040a14);
-border:1px solid var(--border);
-}
-
-.platforms{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
-margin-top:17px;
-}
-
-.platform{
-padding:15px 5px;
-text-align:center;
-border-radius:16px;
-background:#061020;
-border:1px solid rgba(21,151,255,.3);
-}
-
-.platform-icon{
-font-size:23px;
-}
-
-.platform-name{
-margin-top:6px;
-font-size:11px;
-color:#c9d7e8;
-}
-
-/* GALLERY */
 
 .gallery{
-display:flex;
-gap:12px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
 }
 
-.gallery::-webkit-scrollbar{
-display:none;
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  border:2px solid #126ebc;
+  background:#06172a;
+  cursor:pointer;
 }
 
-.gallery-item{
-min-width:82%;
-height:260px;
-position:relative;
-overflow:hidden;
-border-radius:24px;
-border:1px solid var(--border);
-background:#071426;
-scroll-snap-align:center;
-}
-
-.gallery-item img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.gallery-caption{
-position:absolute;
-left:0;
-right:0;
-bottom:0;
-padding:35px 17px 16px;
-background:linear-gradient(transparent,rgba(0,0,0,.9));
-font-weight:bold;
-}
-
-/* NEWS */
-
-.news{
-display:flex;
-flex-direction:column;
-gap:11px;
-}
-
-.news-card{
-padding:18px;
-border-radius:20px;
-background:#071221;
-border:1px solid rgba(21,151,255,.3);
-}
-
-.news-card small{
-color:#35aaff;
-}
-
-.news-card h3{
-margin-top:7px;
-font-size:16px;
-}
-
-.news-card p{
-margin-top:6px;
-color:var(--muted);
-font-size:13px;
-}
-
-/* SOCIAL */
-
-.social-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-}
-
-.social{
-padding:17px 7px;
-text-align:center;
-border-radius:18px;
-background:#071221;
-border:1px solid rgba(21,151,255,.3);
-}
-
-.social-icon{
-font-size:25px;
-}
-
-.social-name{
-margin-top:6px;
-font-size:11px;
-color:#c7d4e8;
-}
-
-/* ABOUT */
-
-.about{
-padding:22px;
-border-radius:24px;
-background:linear-gradient(145deg,#08182c,#030914);
-border:1px solid var(--border);
-}
-
-.about h3{
-color:#27a2ff;
-}
-
-.about p{
-margin-top:10px;
-color:#9db0c7;
-font-size:14px;
-line-height:1.7;
-}
-
-/* ADMIN */
-
-.admin-panel{
-display:none;
-margin-top:18px;
-padding:20px;
-border-radius:25px;
-background:
-linear-gradient(145deg,#09223c,#030914);
-border:1px solid #32e875;
-box-shadow:0 0 30px rgba(50,232,117,.12);
-}
-
-.admin-panel.show{
-display:block;
-}
-
-.admin-title{
-font-size:21px;
-font-weight:bold;
-color:#32e875;
-margin-bottom:8px;
-}
-
-.admin-info{
-font-size:12px;
-color:#91a3bd;
-line-height:1.6;
-margin-bottom:15px;
-}
-
-.admin-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.admin-btn{
-padding:14px 8px;
-border-radius:15px;
-background:#061426;
-border:1px solid #32e875;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* MODAL */
-
-.modal{
-position:fixed;
-inset:0;
-z-index:500;
-display:none;
-align-items:flex-end;
-justify-content:center;
-padding:15px;
-background:rgba(0,3,10,.78);
-backdrop-filter:blur(10px);
-}
-
-.modal.open{
-display:flex;
-}
-
-.modal-box{
-width:min(620px,100%);
-max-height:88vh;
-overflow:auto;
-padding:23px;
-border-radius:28px 28px 0 0;
-background:#07111f;
-border:1px solid #1597ff;
-box-shadow:0 -10px 60px rgba(0,125,255,.25);
-}
-
-.modal-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.modal-head h2{
-color:#29a2ff;
-}
-
-.close{
-width:40px;
-height:40px;
-border:0;
-border-radius:12px;
-background:#102036;
-color:white;
-font-size:22px;
-cursor:pointer;
-}
-
-.form-group{
-margin-bottom:14px;
-}
-
-.form-group label{
-display:block;
-font-size:12px;
-color:#91a3bd;
-margin-bottom:7px;
-}
-
-.form-group input{
-width:100%;
-padding:15px;
-border-radius:14px;
-border:1px solid #174d78;
-background:#020914;
-color:white;
-outline:none;
-}
-
-.form-group input:focus{
-border-color:#1597ff;
-box-shadow:0 0 15px rgba(21,151,255,.15);
-}
-
-.full-btn{
-width:100%;
-padding:15px;
-border:0;
-border-radius:15px;
-background:#1597ff;
-color:white;
-font-weight:bold;
-cursor:pointer;
-}
-
-.file-btn{
-display:block;
-padding:15px;
-text-align:center;
-border-radius:15px;
-border:1px dashed #1597ff;
-background:#061020;
-color:#72c6ff;
-cursor:pointer;
-margin-bottom:12px;
-}
-
-.file-btn input{
-display:none;
-}
-
-/* BOTTOM */
-
-.bottom-nav{
-position:fixed;
-left:0;
-right:0;
-bottom:0;
-height:80px;
-z-index:300;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-background:rgba(3,9,18,.97);
-backdrop-filter:blur(20px);
-border-top:1px solid rgba(21,151,255,.38);
-}
-
-.nav-item{
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:5px;
-color:#7e90a8;
-font-size:11px;
-}
-
-.nav-icon{
-font-size:23px;
-}
-
-.nav-item.active{
-color:#159cff;
-text-shadow:0 0 15px #008cff;
-}
-
-/* TOAST */
-
-.toast{
-position:fixed;
-left:50%;
-bottom:95px;
-transform:translate(-50%,20px);
-opacity:0;
-pointer-events:none;
-z-index:1000;
-padding:13px 18px;
-border-radius:15px;
-background:#0a1d34;
-border:1px solid #1597ff;
-transition:.3s;
-white-space:nowrap;
-}
-
-.toast.show{
-opacity:1;
-transform:translate(-50%,0);
+.empty{
+  color:#9bb4cc;
+  line-height:1.6;
 }
 
 footer{
-text-align:center;
-margin-top:35px;
-padding:25px;
-color:#53657d;
-font-size:12px;
+  text-align:center;
+  padding:35px 20px;
+  color:#7191ae;
 }
-
-/* DESKTOP */
-
-@media(min-width:800px){
-
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
-
-.gallery-item{
-min-width:31%;
-}
-
-}
-
-/* MOBILE */
 
 @media(max-width:600px){
+  header{
+    height:125px;
+    padding:25px 18px;
+  }
 
-.hero{
-min-height:570px;
-}
+  .logo{
+    font-size:30px;
+  }
 
-.hero h1{
-font-size:62px;
-}
+  .top-btn{
+    width:58px;
+    height:58px;
+    font-size:26px;
+  }
 
-.grid{
-grid-template-columns:1fr 1fr;
-}
+  .main{
+    padding:30px 14px 70px;
+  }
 
-.id-actions{
-grid-template-columns:1fr 1fr;
-}
+  .hero{
+    min-height:780px;
+    padding:35px 25px;
+    border-radius:38px;
+  }
 
-.admin-grid{
-grid-template-columns:1fr 1fr;
-}
+  .number{
+    font-size:78px;
+  }
 
-}
+  .subtitle{
+    font-size:25px;
+  }
 
-@media(max-width:390px){
+  .status{
+    font-size:17px;
+  }
 
-.logo{
-font-size:23px;
-}
-
-.hero h1{
-font-size:53px;
-}
-
-.hero-content{
-left:20px;
-right:20px;
-bottom:22px;
-}
-
-.admin-grid{
-grid-template-columns:1fr;
-}
-
+  .gallery img{
+    height:170px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="topbar">
+<header>
+  <div class="logo">1890 UZI</div>
 
-<div class="logo">
-1890 UZI
-</div>
-
-<div class="top-buttons">
-
-<button class="icon-btn" onclick="searchSite()">
-🔎
-</button>
-
-<button class="icon-btn" onclick="showToast('🔔 1890 sistemi aktif')">
-🔔
-</button>
-
-</div>
-
+  <div class="top-buttons">
+    <button class="top-btn" onclick="document.getElementById('gallery').scrollIntoView()">🔎</button>
+    <button class="top-btn" onclick="alert('1890 UZI Dijital Center')">🔔</button>
+  </div>
 </header>
 
+<main class="main">
 
-<main class="container">
+  <section class="hero">
 
-<!-- HERO -->
+    <div class="status">
+      <span class="dot"></span>
+      1890 DIGITAL CENTER
+    </div>
 
-<section class="hero" id="hero">
+    <div class="number">1890</div>
 
-<div class="hero-content">
+    <div class="subtitle">
+      UZI • Dijital Merkez
+    </div>
 
-<div class="badge">
-<span class="dot"></span>
-1890 DIGITAL CENTER
-</div>
+    <div class="buttons">
+      <button class="btn primary" onclick="alert('ID SYSTEM aktif')">
+        🔑 ID SYSTEM
+      </button>
 
-<h1>1890</h1>
+      <button class="btn" onclick="document.getElementById('gallery').scrollIntoView()">
+        📸 Galeri
+      </button>
+    </div>
 
-<p>UZI • Dijital Merkez</p>
+  </section>
 
-<div class="hero-buttons">
+  <section class="section" id="gallery">
+    <h2>📸 1890 UZI GALERİ</h2>
 
-<button
-class="btn primary"
-onclick="document.getElementById('idSystem').scrollIntoView({behavior:'smooth'})">
-🔑 ID SYSTEM
-</button>
+    <div class="gallery" id="photoGallery">
+      <div class="empty">Fotoğraflar yükleniyor...</div>
+    </div>
+  </section>
 
-<button
-class="btn secondary"
-onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-📸 Galeri
-</button>
+</main>
 
-</div>
+<footer>
+  1890 UZI • Digital Center
+</footer>
 
-</div>
+<script>
+/*
+  GitHub deposundaki resimleri otomatik bulur.
+  Böylece dosya isimlerini tek tek yazmaya gerek kalmaz.
+*/
 
-</section>
+const owner = "uzibaba221-glitch";
+const repo = "1890uzi";
+const branch = "main";
 
+const gallery = document.getElementById("photoGallery");
 
-<!-- ID -->
+async function loadPhotos(){
 
-<section class="id-system" id="idSystem">
+  try{
 
-<div class="id-header">
+    const api =
+      `https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`;
 
-<div class="id-title">
-🔑 1890 ID SYSTEM
-</div>
+    const response = await fetch(api);
 
-<div class="member">
-💎 MEMBER
-</div>
+    if(!response.ok){
+      throw new Error("GitHub dosyaları alınamadı");
+    }
 
-<div class="owner-badge" id="ownerBadge">
-👑 OWNER
-</div>
+    const data = await response.json();
 
-</div>
+    const imageFiles = data.tree.filter(file => {
 
+      if(file.type !== "blob") return false;
 
-<div class="id-card">
+      const name = file.path.toLowerCase();
 
-<div class="id-user">
+      return (
+        name.endsWith(".jpg") ||
+        name.endsWith(".jpeg") ||
+        name.endsWith(".png") ||
+        name.endsWith(".webp") ||
+        name.endsWith(".gif")
+      );
 
-<div class="avatar" id="avatar">
+    });
 
-<img id="avatarImage" alt="Profil">
+    gallery.innerHTML = "";
 
-</div>
+    if(imageFiles.length === 0){
 
-<div>
+      gallery.innerHTML =
+        '<div class="empty">Henüz fotoğraf bulunamadı.</div>';
 
-<div class="user-name" id="userName">
-Misafir
-</div>
+      return;
+    }
 
-<div class="user-id" id="userId">
-Henüz KEY oluşturulmadı
-</div>
+    imageFiles.forEach(file => {
 
-</div>
+      const img = document.createElement("img");
 
-</div>
+      img.src =
+        `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${file.path}`;
 
+      img.alt = "1890 UZI";
 
-<div class="key-box">
+      img.loading = "lazy";
 
-<div class="key" id="userKey">
-1890-NEW-USER
-</div>
+      img.onclick = () => {
+        window.open(img.src,"_blank");
+      };
 
-<button
-class="small-btn"
-onclick="copyKey()">
-KOPYALA
-</button>
+      gallery.appendChild(img);
 
-</div>
+    });
 
+  }catch(error){
 
-<div class="id-actions">
+    gallery.innerHTML =
+      '<div class="empty">Fotoğraflar yüklenemedi. Sayfayı yenileyip tekrar deneyin.</div>';
 
-<button
-class="action-btn"
-onclick="openProfile()">
-✏️ Profili Düzenle
-</button>
+    console.log(error);
 
-<button
-class="action-btn"
-onclick="generateIdentity()">
-🔑 Yeni KEY
-</button>
-
-<button
-class="action-btn"
-onclick="copyKey()">
-📋 KEY Kopyala
-</button>
-
-<button
-class="action-btn"
-onclick="logoutIdentity()">
-🚪 Çıkış
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ADMIN -->
-
-<section class="admin-panel" id="adminPanel">
-
-<div class="admin-title">
-👑 1890 OWNER PANEL
-</div>
-
-<div class="admin-info">
-Bu panel yalnızca bu cihazdaki yerel Owner modu için
-görünür. Buradan ana sayfa ve galeri fotoğraflarını
-değiştirebilirsin.
-</div>
+  }
 
-<div class="admin-grid">
+}
 
-<button
-class="admin-btn"
-onclick="openHeroUpload()">
-🖼️ Ana Sayfa Fotoğrafı
-</button>
+loadPhotos();
+</script>
 
-<button
-class="admin-btn"
-onclick="openGalleryUpload(1)">
-📸 Galeri 1
-</button>
-
-<button
-class="admin-btn"
-onclick="openGalleryUpload(2)">
-📸 Galeri 2
-</button>
-
-<button
-class="admin-btn"
-onclick="openGalleryUpload(3)">
-📸 Galeri 3
-</button>
-
-</div>
-
-<input
-type="file"
-id="heroUpload"
-accept="image/*"
-style="display:none"
-onchange="changeHero(event)">
-
-<input
-type="file"
-id="galleryUpload"
-accept="image/*"
-style="display:none"
-onchange="changeGallery(event)">
-
-</section>
-
-
-<!-- QUICK -->
-
-<section class="section">
-
-<h2 class="section-title">
-Hızlı <span>Erişim</span>
-</h2>
-
-<div class="grid">
-
-<a class="card" href="#music">
-<div class="card-icon">🎵</div>
-<h3>Müzik</h3>
-<p>UZI müzik platformlarına hızlı erişim.</p>
-</a>
-
-<a class="card" href="#gallery">
-<div class="card-icon">📸</div>
-<h3>Galeri</h3>
-<p>1890 fotoğraf arşivini keşfet.</p>
-</a>
-
-<a class="card" href="#social">
-<div class="card-icon">🌐</div>
-<h3>Sosyal Medya</h3>
-<p>Tüm platformlara tek yerden ulaş.</p>
-</a>
-
-<a class="card" href="#news">
-<div class="card-icon">📰</div>
-<h3>Haberler</h3>
-<p>Güncel gelişmeleri takip et.</p>
-</a>
-
-<a class="card" href="#stats">
-<div class="card-icon">📊</div>
-<h3>1890 İstatistik</h3>
-<p>Dijital merkez bilgilerini görüntüle.</p>
-</a>
-
-<a class="card" href="#about">
-<div class="card-icon">⚡</div>
-<h3>1890 SYSTEM</h3>
-<p>Sistem hakkında bilgi al.</p>
-</a>
-
-</div>
-
-</section>
-
-
-<!-- STATS
-
+</body>
+</html>
