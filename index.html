@@ -7,9 +7,15 @@
 <title>1890 UZI | Digital Center</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:Arial,Helvetica,sans-serif;
@@ -17,11 +23,17 @@ background:
 radial-gradient(circle at 50% -10%,#06498a 0%,#020611 38%,#01030a 100%);
 color:#f4f8ff;
 min-height:100vh;
-padding-bottom:95px;
+padding-bottom:90px;
 }
 
-a{text-decoration:none;color:inherit}
-button,input{font-family:inherit}
+a{
+text-decoration:none;
+color:inherit;
+}
+
+button,input{
+font-family:inherit;
+}
 
 :root{
 --blue:#1597ff;
@@ -32,7 +44,7 @@ button,input{font-family:inherit}
 --muted:#91a3bd;
 }
 
-/* ÜST BAR */
+/* TOP BAR */
 
 .topbar{
 height:74px;
@@ -43,7 +55,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 18px;
-background:rgba(2,6,17,.9);
+background:rgba(2,6,17,.94);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(21,151,255,.4);
 }
@@ -56,7 +68,10 @@ letter-spacing:1px;
 text-shadow:0 0 25px #008cff;
 }
 
-.top-buttons{display:flex;gap:10px}
+.top-buttons{
+display:flex;
+gap:9px;
+}
 
 .icon-btn{
 width:50px;
@@ -69,12 +84,14 @@ font-size:22px;
 cursor:pointer;
 }
 
-/* ANA */
+/* MAIN */
 
 .container{
 width:min(1100px,94%);
 margin:auto;
 }
+
+/* HERO */
 
 .hero{
 margin-top:24px;
@@ -83,10 +100,17 @@ position:relative;
 overflow:hidden;
 border-radius:32px;
 border:1px solid #1597ff;
+
 background:
-linear-gradient(0deg,rgba(1,4,12,.98),rgba(1,4,12,.18)),
+linear-gradient(
+0deg,
+rgba(1,4,12,.98),
+rgba(1,4,12,.15)
+),
 url("images/1890-cover.jpg") center/cover no-repeat;
-box-shadow:0 0 55px rgba(0,119,255,.24);
+
+box-shadow:
+0 0 55px rgba(0,119,255,.24);
 }
 
 .hero-content{
@@ -135,6 +159,7 @@ color:#e0ebf8;
 display:flex;
 gap:10px;
 margin-top:22px;
+flex-wrap:wrap;
 }
 
 .btn{
@@ -191,6 +216,16 @@ border:1px solid #1597ff;
 color:#55b6ff;
 }
 
+.owner-badge{
+font-size:11px;
+padding:7px 10px;
+border-radius:20px;
+background:rgba(50,232,117,.12);
+border:1px solid #32e875;
+color:#32e875;
+display:none;
+}
+
 .id-card{
 margin-top:17px;
 padding:18px;
@@ -210,9 +245,11 @@ width:72px;
 height:72px;
 border-radius:50%;
 border:3px solid #1597ff;
+
 background:
 url("images/uzi-profile.jpg") center/cover no-repeat,
 linear-gradient(145deg,#063b75,#020611);
+
 box-shadow:0 0 25px rgba(0,140,255,.45);
 overflow:hidden;
 }
@@ -285,14 +322,18 @@ font-weight:bold;
 
 /* SECTION */
 
-.section{margin-top:32px}
+.section{
+margin-top:32px;
+}
 
 .section-title{
 font-size:24px;
 margin-bottom:15px;
 }
 
-.section-title span{color:#209eff}
+.section-title span{
+color:#209eff;
+}
 
 /* GRID */
 
@@ -311,14 +352,18 @@ border:1px solid var(--border);
 transition:.2s;
 }
 
-.card:active{transform:scale(.97)}
+.card:active{
+transform:scale(.97);
+}
 
 .card-icon{
 font-size:31px;
 margin-bottom:11px;
 }
 
-.card h3{font-size:17px}
+.card h3{
+font-size:17px;
+}
 
 .card p{
 margin-top:7px;
@@ -378,14 +423,17 @@ background:#061020;
 border:1px solid rgba(21,151,255,.3);
 }
 
-.platform-icon{font-size:23px}
+.platform-icon{
+font-size:23px;
+}
+
 .platform-name{
 margin-top:6px;
 font-size:11px;
 color:#c9d7e8;
 }
 
-/* GALERİ */
+/* GALLERY */
 
 .gallery{
 display:flex;
@@ -394,7 +442,9 @@ overflow-x:auto;
 scroll-snap-type:x mandatory;
 }
 
-.gallery::-webkit-scrollbar{display:none}
+.gallery::-webkit-scrollbar{
+display:none;
+}
 
 .gallery-item{
 min-width:82%;
@@ -438,7 +488,9 @@ background:#071221;
 border:1px solid rgba(21,151,255,.3);
 }
 
-.news-card small{color:#35aaff}
+.news-card small{
+color:#35aaff;
+}
 
 .news-card h3{
 margin-top:7px;
@@ -467,7 +519,9 @@ background:#071221;
 border:1px solid rgba(21,151,255,.3);
 }
 
-.social-icon{font-size:25px}
+.social-icon{
+font-size:25px;
+}
 
 .social-name{
 margin-top:6px;
@@ -484,13 +538,62 @@ background:linear-gradient(145deg,#08182c,#030914);
 border:1px solid var(--border);
 }
 
-.about h3{color:#27a2ff}
+.about h3{
+color:#27a2ff;
+}
 
 .about p{
 margin-top:10px;
 color:#9db0c7;
 font-size:14px;
 line-height:1.7;
+}
+
+/* ADMIN */
+
+.admin-panel{
+display:none;
+margin-top:18px;
+padding:20px;
+border-radius:25px;
+background:
+linear-gradient(145deg,#09223c,#030914);
+border:1px solid #32e875;
+box-shadow:0 0 30px rgba(50,232,117,.12);
+}
+
+.admin-panel.show{
+display:block;
+}
+
+.admin-title{
+font-size:21px;
+font-weight:bold;
+color:#32e875;
+margin-bottom:8px;
+}
+
+.admin-info{
+font-size:12px;
+color:#91a3bd;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.admin-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.admin-btn{
+padding:14px 8px;
+border-radius:15px;
+background:#061426;
+border:1px solid #32e875;
+color:white;
+font-weight:bold;
+cursor:pointer;
 }
 
 /* MODAL */
@@ -507,7 +610,9 @@ background:rgba(0,3,10,.78);
 backdrop-filter:blur(10px);
 }
 
-.modal.open{display:flex}
+.modal.open{
+display:flex;
+}
 
 .modal-box{
 width:min(620px,100%);
@@ -527,7 +632,9 @@ align-items:center;
 margin-bottom:20px;
 }
 
-.modal-head h2{color:#29a2ff}
+.modal-head h2{
+color:#29a2ff;
+}
 
 .close{
 width:40px;
@@ -540,7 +647,9 @@ font-size:22px;
 cursor:pointer;
 }
 
-.form-group{margin-bottom:14px}
+.form-group{
+margin-bottom:14px;
+}
 
 .form-group label{
 display:block;
@@ -587,7 +696,9 @@ cursor:pointer;
 margin-bottom:12px;
 }
 
-.file-btn input{display:none}
+.file-btn input{
+display:none;
+}
 
 /* BOTTOM */
 
@@ -600,7 +711,7 @@ height:80px;
 z-index:300;
 display:grid;
 grid-template-columns:repeat(4,1fr);
-background:rgba(3,9,18,.96);
+background:rgba(3,9,18,.97);
 backdrop-filter:blur(20px);
 border-top:1px solid rgba(21,151,255,.38);
 }
@@ -615,7 +726,9 @@ color:#7e90a8;
 font-size:11px;
 }
 
-.nav-icon{font-size:23px}
+.nav-icon{
+font-size:23px;
+}
 
 .nav-item.active{
 color:#159cff;
@@ -653,7 +766,21 @@ color:#53657d;
 font-size:12px;
 }
 
-/* MOBİL */
+/* DESKTOP */
+
+@media(min-width:800px){
+
+.grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.gallery-item{
+min-width:31%;
+}
+
+}
+
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -673,16 +800,30 @@ grid-template-columns:1fr 1fr;
 grid-template-columns:1fr 1fr;
 }
 
+.admin-grid{
+grid-template-columns:1fr 1fr;
 }
 
-@media(min-width:800px){
-
-.grid{
-grid-template-columns:repeat(3,1fr);
 }
 
-.gallery-item{
-min-width:31%;
+@media(max-width:390px){
+
+.logo{
+font-size:23px;
+}
+
+.hero h1{
+font-size:53px;
+}
+
+.hero-content{
+left:20px;
+right:20px;
+bottom:22px;
+}
+
+.admin-grid{
+grid-template-columns:1fr;
 }
 
 }
@@ -693,13 +834,19 @@ min-width:31%;
 
 <header class="topbar">
 
-<div class="logo">1890 UZI</div>
+<div class="logo">
+1890 UZI
+</div>
 
 <div class="top-buttons">
 
-<button class="icon-btn" onclick="searchSite()">🔎</button>
+<button class="icon-btn" onclick="searchSite()">
+🔎
+</button>
 
-<button class="icon-btn" onclick="showToast('🔔 1890 sistemi aktif')">🔔</button>
+<button class="icon-btn" onclick="showToast('🔔 1890 sistemi aktif')">
+🔔
+</button>
 
 </div>
 
@@ -710,7 +857,7 @@ min-width:31%;
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
 <div class="hero-content">
 
@@ -725,12 +872,14 @@ min-width:31%;
 
 <div class="hero-buttons">
 
-<button class="btn primary"
+<button
+class="btn primary"
 onclick="document.getElementById('idSystem').scrollIntoView({behavior:'smooth'})">
 🔑 ID SYSTEM
 </button>
 
-<button class="btn secondary"
+<button
+class="btn secondary"
 onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
 📸 Galeri
 </button>
@@ -742,15 +891,23 @@ onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})"
 </section>
 
 
-<!-- ID SYSTEM -->
+<!-- ID -->
 
 <section class="id-system" id="idSystem">
 
 <div class="id-header">
 
-<div class="id-title">🔑 1890 ID SYSTEM</div>
+<div class="id-title">
+🔑 1890 ID SYSTEM
+</div>
 
-<div class="member">💎 MEMBER</div>
+<div class="member">
+💎 MEMBER
+</div>
+
+<div class="owner-badge" id="ownerBadge">
+👑 OWNER
+</div>
 
 </div>
 
@@ -786,7 +943,9 @@ Henüz KEY oluşturulmadı
 1890-NEW-USER
 </div>
 
-<button class="small-btn" onclick="copyKey()">
+<button
+class="small-btn"
+onclick="copyKey()">
 KOPYALA
 </button>
 
@@ -795,25 +954,92 @@ KOPYALA
 
 <div class="id-actions">
 
-<button class="action-btn" onclick="openProfile()">
+<button
+class="action-btn"
+onclick="openProfile()">
 ✏️ Profili Düzenle
 </button>
 
-<button class="action-btn" onclick="generateIdentity()">
+<button
+class="action-btn"
+onclick="generateIdentity()">
 🔑 Yeni KEY
 </button>
 
-<button class="action-btn" onclick="copyKey()">
+<button
+class="action-btn"
+onclick="copyKey()">
 📋 KEY Kopyala
 </button>
 
-<button class="action-btn" onclick="logoutIdentity()">
+<button
+class="action-btn"
+onclick="logoutIdentity()">
 🚪 Çıkış
 </button>
 
 </div>
 
 </div>
+
+</section>
+
+
+<!-- ADMIN -->
+
+<section class="admin-panel" id="adminPanel">
+
+<div class="admin-title">
+👑 1890 OWNER PANEL
+</div>
+
+<div class="admin-info">
+Bu panel yalnızca bu cihazdaki yerel Owner modu için
+görünür. Buradan ana sayfa ve galeri fotoğraflarını
+değiştirebilirsin.
+</div>
+
+<div class="admin-grid">
+
+<button
+class="admin-btn"
+onclick="openHeroUpload()">
+🖼️ Ana Sayfa Fotoğrafı
+</button>
+
+<button
+class="admin-btn"
+onclick="openGalleryUpload(1)">
+📸 Galeri 1
+</button>
+
+<button
+class="admin-btn"
+onclick="openGalleryUpload(2)">
+📸 Galeri 2
+</button>
+
+<button
+class="admin-btn"
+onclick="openGalleryUpload(3)">
+📸 Galeri 3
+</button>
+
+</div>
+
+<input
+type="file"
+id="heroUpload"
+accept="image/*"
+style="display:none"
+onchange="changeHero(event)">
+
+<input
+type="file"
+id="galleryUpload"
+accept="image/*"
+style="display:none"
+onchange="changeGallery(event)">
 
 </section>
 
@@ -911,667 +1137,4 @@ Müzik <span>Merkezi</span>
 
 <b>🎧 UZI Müzik Dünyası</b>
 
-<p style="margin-top:7px;color:#91a3bd;font-size:13px">
-Müzik platformlarına tek dokunuşla geç.
-</p>
-
-<div class="platforms">
-
-<a class="platform"
-href="https://open.spotify.com/"
-target="_blank">
-
-<div class="platform-icon">🎧</div>
-<div class="platform-name">Spotify</div>
-
-</a>
-
-<a class="platform"
-href="https://www.youtube.com/"
-target="_blank">
-
-<div class="platform-icon">▶️</div>
-<div class="platform-name">YouTube</div>
-
-</a>
-
-<a class="platform"
-href="https://soundcloud.com/"
-target="_blank">
-
-<div class="platform-icon">☁️</div>
-<div class="platform-name">SoundCloud</div>
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="section" id="gallery">
-
-<h2 class="section-title">
-1890 <span>Galeri</span>
-</h2>
-
-<div class="gallery">
-
-<div class="gallery-item">
-
-<img src="images/1890-cover.jpg" alt="1890">
-
-<div class="gallery-caption">
-1890 • Digital Center
-</div>
-
-</div>
-
-<div class="gallery-item">
-
-<img src="images/uzi-profile.jpg" alt="UZI">
-
-<div class="gallery-caption">
-UZI • Profile
-</div>
-
-</div>
-
-<div class="gallery-item">
-
-<img src="images/1890-gallery.jpg"
-alt="1890 Gallery"
-onerror="this.parentElement.style.display='none'">
-
-<div class="gallery-caption">
-1890 Gallery
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- NEWS -->
-
-<section class="section" id="news">
-
-<h2 class="section-title">
-Güncel <span>Haberler</span>
-</h2>
-
-<div class="news">
-
-<a class="news-card"
-href="https://www.google.com/search?q=UZI+1890+haberler"
-target="_blank">
-
-<small>1890 • HABER</small>
-
-<h3>UZI hakkında güncel haberleri görüntüle →</h3>
-
-<p>Güncel arama sonuçlarını aç.</p>
-
-</a>
-
-
-<a class="news-card"
-href="https://www.google.com/search?q=UZI+yeni+şarkı"
-target="_blank">
-
-<small>MÜZİK</small>
-
-<h3>Yeni müzik gelişmelerini keşfet →</h3>
-
-<p>Yeni şarkılar ve müzik haberleri.</p>
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- SOCIAL -->
-
-<section class="section" id="social">
-
-<h2 class="section-title">
-Sosyal <span>Medya</span>
-</h2>
-
-<div class="social-grid">
-
-<a class="social"
-href="https://www.instagram.com/"
-target="_blank">
-
-<div class="social-icon">◎</div>
-<div class="social-name">Instagram</div>
-
-</a>
-
-<a class="social"
-href="https://www.youtube.com/"
-target="_blank">
-
-<div class="social-icon">▶</div>
-<div class="social-name">YouTube</div>
-
-</a>
-
-<a class="social"
-href="https://www.tiktok.com/"
-target="_blank">
-
-<div class="social-icon">♪</div>
-<div class="social-name">TikTok</div>
-
-</a>
-
-<a class="social"
-href="https://x.com/"
-target="_blank">
-
-<div class="social-icon">𝕏</div>
-<div class="social-name">X</div>
-
-</a>
-
-<a class="social"
-href="https://open.spotify.com/"
-target="_blank">
-
-<div class="social-icon">●</div>
-<div class="social-name">Spotify</div>
-
-</a>
-
-<a class="social"
-href="https://soundcloud.com/"
-target="_blank">
-
-<div class="social-icon">☁</div>
-<div class="social-name">SoundCloud</div>
-
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="section" id="about">
-
-<div class="about">
-
-<h3>⚡ 1890 SYSTEM</h3>
-
-<p>
-1890 UZI Digital Center; müzik, galeri,
-sosyal medya, haberler ve dijital kimlik
-özelliklerini tek bir mobil merkezde
-birleştiren neon temalı bir platformdur.
-</p>
-
-<p>
-🔐 Gerçek hesap sistemi kullanılmaz.
-1890 ID bilgileri yalnızca bu cihazdaki
-tarayıcıda saklanır.
-</p>
-
-</div>
-
-</section>
-
-
-<footer>
-1890 UZI • DIGITAL CENTER<br><br>
-© 2026 • 1890 SYSTEM
-</footer>
-
-</main>
-
-
-<!-- ALT MENÜ -->
-
-<nav class="bottom-nav">
-
-<a class="nav-item active"
-href="#"
-onclick="window.scrollTo({top:0,behavior:'smooth'});return false">
-
-<div class="nav-icon">⌂</div>
-Ana Sayfa
-
-</a>
-
-<a class="nav-item" href="#music">
-
-<div class="nav-icon">🎵</div>
-Müzik
-
-</a>
-
-<a class="nav-item" href="#gallery">
-
-<div class="nav-icon">📸</div>
-Galeri
-
-</a>
-
-<a class="nav-item"
-href="#idSystem"
-onclick="openProfile()">
-
-<div class="nav-icon">👤</div>
-Profil
-
-</a>
-
-</nav>
-
-
-<!-- PROFİL MODAL -->
-
-<div class="modal" id="profileModal">
-
-<div class="modal-box">
-
-<div class="modal-head">
-
-<h2>👤 1890 Profil</h2>
-
-<button class="close"
-onclick="closeProfile()">×</button>
-
-</div>
-
-
-<div class="form-group">
-
-<label>TAKMA AD</label>
-
-<input
-id="nameInput"
-maxlength="20"
-placeholder="Örn: 1890Fan">
-
-</div>
-
-
-<label class="file-btn">
-
-📸 Profil Fotoğrafı Seç
-
-<input
-type="file"
-id="photoInput"
-accept="image/*"
-onchange="changePhoto(event)">
-
-</label>
-
-
-<button class="full-btn"
-onclick="saveProfile()">
-
-💾 PROFİLİ KAYDET
-
-</button>
-
-</div>
-
-</div>
-
-
-<div class="toast" id="toast"></div>
-
-
-<script>
-
-/* =========================================
-   1890 ID SYSTEM
-========================================= */
-
-const STORAGE_KEY="uzi1890_identity";
-
-let identity=null;
-
-
-/* KEY ÜRET */
-
-function randomPart(length){
-
-const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-let result="";
-
-for(let i=0;i<length;i++){
-
-result+=chars.charAt(
-Math.floor(Math.random()*chars.length)
-);
-
-}
-
-return result;
-
-}
-
-
-function createKey(){
-
-return "1890-"+
-randomPart(4)+"-"+
-randomPart(4);
-
-}
-
-
-function createId(){
-
-return "UZ"+
-Date.now().toString(36).toUpperCase()+
-randomPart(3);
-
-}
-
-
-/* YENİ KİMLİK */
-
-function generateIdentity(){
-
-identity={
-name:"1890 MEMBER",
-key:createKey(),
-id:createId(),
-photo:""
-};
-
-saveIdentity();
-
-updateUI();
-
-showToast("🔑 Yeni 1890 KEY oluşturuldu!");
-
-}
-
-
-/* KAYDET */
-
-function saveIdentity(){
-
-localStorage.setItem(
-STORAGE_KEY,
-JSON.stringify(identity)
-);
-
-}
-
-
-/* YÜKLE */
-
-function loadIdentity(){
-
-const saved=localStorage.getItem(STORAGE_KEY);
-
-if(saved){
-
-try{
-
-identity=JSON.parse(saved);
-
-}catch(e){
-
-identity=null;
-
-}
-
-}
-
-if(!identity){
-
-generateIdentity();
-
-}
-
-updateUI();
-
-}
-
-
-/* ARAYÜZ */
-
-function updateUI(){
-
-if(!identity)return;
-
-document.getElementById("userName").textContent=
-identity.name || "1890 MEMBER";
-
-document.getElementById("userId").textContent=
-"ID: "+identity.id;
-
-document.getElementById("userKey").textContent=
-identity.key;
-
-
-/* PROFİL FOTOĞRAFI */
-
-const avatar=document.getElementById("avatar");
-const image=document.getElementById("avatarImage");
-
-if(identity.photo){
-
-image.src=identity.photo;
-image.style.display="block";
-avatar.style.background="none";
-
-}else{
-
-image.style.display="none";
-avatar.style.background=
-'url("images/uzi-profile.jpg") center/cover no-repeat';
-
-}
-
-}
-
-
-/* PROFİLİ AÇ */
-
-function openProfile(){
-
-const modal=document.getElementById("profileModal");
-
-document.getElementById("nameInput").value=
-identity?.name || "";
-
-modal.classList.add("open");
-
-}
-
-
-/* PROFİLİ KAPAT */
-
-function closeProfile(){
-
-document.getElementById("profileModal")
-.classList.remove("open");
-
-}
-
-
-/* PROFİL KAYDET */
-
-function saveProfile(){
-
-if(!identity){
-
-generateIdentity();
-
-}
-
-const name=
-document.getElementById("nameInput")
-.value.trim();
-
-if(name){
-
-identity.name=name;
-
-}
-
-saveIdentity();
-updateUI();
-closeProfile();
-
-showToast("💎 Profil güncellendi!");
-
-}
-
-
-/* FOTOĞRAF */
-
-function changePhoto(event){
-
-const file=event.target.files[0];
-
-if(!file)return;
-
-if(file.size>5*1024*1024){
-
-showToast("⚠️ Fotoğraf 5 MB'dan küçük olmalı!");
-
-return;
-
-}
-
-const reader=new FileReader();
-
-reader.onload=function(){
-
-identity.photo=reader.result;
-
-saveIdentity();
-updateUI();
-
-showToast("📸 Profil fotoğrafı değiştirildi!");
-
-};
-
-reader.readAsDataURL(file);
-
-}
-
-
-/* KEY KOPYALA */
-
-function copyKey(){
-
-if(!identity)return;
-
-const key=identity.key;
-
-if(navigator.clipboard){
-
-navigator.clipboard.writeText(key)
-.then(function(){
-
-showToast("📋 KEY kopyalandı!");
-
-});
-
-}else{
-
-showToast("KEY: "+key);
-
-}
-
-}
-
-
-/* ÇIKIŞ */
-
-function logoutIdentity(){
-
-localStorage.removeItem(STORAGE_KEY);
-
-identity=null;
-
-generateIdentity();
-
-showToast("🚪 Yeni 1890 ID oluşturuldu.");
-
-}
-
-
-/* ARAMA */
-
-function searchSite(){
-
-const q=prompt("1890 içinde ne aramak istiyorsun?");
-
-if(q && q.trim()){
-
-window.open(
-"https://www.google.com/search?q="+
-encodeURIComponent("UZI 1890 "+q),
-"_blank"
-);
-
-}
-
-}
-
-
-/* BİLDİRİM */
-
-function showToast(message){
-
-const toast=document.getElementById("toast");
-
-toast.textContent=message;
-
-toast.classList.add("show");
-
-setTimeout(function(){
-
-toast.classList.remove("show");
-
-},2300);
-
-}
-
-
-/* MODAL DIŞINA BASINCA KAPAT */
-
-document.getElementById("profileModal")
-.addEventListener("click",function(event){
-
-if(event.target===this){
-
-closeProfile();
-
-}
-
-});
-
-
-/* BAŞLAT */
-
-loadIdentity();
-
-</script>
-
-</body>
-  </html>
+<p
