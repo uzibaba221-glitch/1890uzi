@@ -1,458 +1,369 @@
+1890
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>1890 UZI | Dijital Merkez</title>
+<meta name="theme-color" content="#020611">
+<title>1890 UZI | Digital Center</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#f4f8ff;
+  background:#020611;
+  padding-bottom:90px;
 }
+a{text-decoration:none;color:inherit}
+button{font:inherit}
 
 :root{
   --bg:#020611;
   --card:#07101f;
-  --card2:#0a1629;
   --blue:#1597ff;
   --cyan:#00d9ff;
   --text:#f4f8ff;
   --muted:#91a3bd;
   --green:#32e875;
-  --border:rgba(21,151,255,.45);
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 50% 0%,#06254c 0%,#020611 45%),
-    #020611;
-  color:var(--text);
-  min-height:100vh;
-  padding-bottom:90px;
-}
-
-button,a{
-  -webkit-tap-highlight-color:transparent;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
+  --border:rgba(21,151,255,.4);
 }
 
 /* ÜST BAR */
-
 .topbar{
-  height:76px;
   position:sticky;
   top:0;
   z-index:100;
+  height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 22px;
-  background:rgba(2,6,17,.88);
+  padding:0 16px;
+  background:rgba(2,6,17,.9);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(21,151,255,.35);
+  border-bottom:1px solid var(--border);
 }
-
 .logo{
-  font-size:30px;
+  font-size:27px;
   font-weight:900;
-  color:#28a7ff;
-  text-shadow:0 0 25px #078dff;
-  letter-spacing:1px;
+  color:#29a4ff;
+  text-shadow:0 0 20px #008cff;
 }
-
-.top-buttons{
-  display:flex;
-  gap:12px;
-}
-
+.top-actions{display:flex;gap:9px}
 .icon-btn{
-  width:50px;
-  height:50px;
-  border-radius:17px;
+  width:44px;height:44px;
+  border-radius:14px;
   border:1px solid var(--border);
-  background:#061020;
+  background:#071222;
   color:white;
-  font-size:23px;
   cursor:pointer;
-  box-shadow:0 0 20px rgba(0,130,255,.12);
+  font-size:20px;
 }
 
-/* ANA */
-
+/* GENEL */
 .container{
-  width:min(1100px,92%);
+  width:min(1100px,94%);
   margin:auto;
 }
 
+/* HERO */
 .hero{
-  margin-top:28px;
+  margin-top:18px;
   min-height:520px;
-  border-radius:30px;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
+  border-radius:28px;
   border:1px solid var(--border);
-
   background:
-    linear-gradient(0deg,rgba(1,5,14,.95),rgba(1,5,14,.15)),
-    url("images/1890-cover.jpg") center/cover no-repeat,
-    radial-gradient(circle at center,#06366b,#020611 70%);
-
-  box-shadow:
-    0 0 45px rgba(0,119,255,.18),
-    inset 0 0 80px rgba(0,0,0,.5);
+    linear-gradient(0deg,rgba(1,5,14,.88),rgba(1,5,14,.12)),
+    url("IMG_20260801_023500_914.jpg") center/cover no-repeat;
+  box-shadow:0 0 45px rgba(0,130,255,.2);
 }
-
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(0,180,255,.08),transparent);
+  pointer-events:none;
+}
 .hero-content{
   position:absolute;
-  left:28px;
-  right:28px;
-  bottom:30px;
+  z-index:2;
+  left:22px;
+  right:22px;
+  bottom:25px;
 }
-
 .badge{
   display:inline-block;
-  background:rgba(10,25,45,.85);
-  border:1px solid rgba(20,150,255,.5);
   padding:8px 13px;
   border-radius:30px;
+  background:rgba(4,15,30,.8);
+  border:1px solid rgba(21,151,255,.6);
   color:#69bdff;
-  font-size:13px;
-  margin-bottom:12px;
+  font-size:12px;
 }
-
 .hero h1{
-  font-size:68px;
-  line-height:.95;
-  color:#299fff;
-  text-shadow:0 0 25px #008cff;
+  margin-top:10px;
+  font-size:64px;
+  line-height:.9;
+  color:#2aa4ff;
+  text-shadow:0 0 28px #008cff;
 }
-
 .hero p{
-  margin-top:12px;
-  font-size:18px;
-  color:#d8e4f5;
+  margin-top:10px;
+  font-size:17px;
+  color:#e0ebfa;
 }
 
 /* PROFİL */
-
 .profile{
-  margin-top:20px;
-  padding:22px;
-  border-radius:25px;
-  background:linear-gradient(145deg,#081426,#040a14);
-  border:1px solid var(--border);
+  margin-top:15px;
+  padding:18px;
   display:flex;
   align-items:center;
-  gap:18px;
-  box-shadow:0 0 30px rgba(0,110,255,.1);
+  gap:15px;
+  border-radius:23px;
+  background:linear-gradient(145deg,#09172a,#040a14);
+  border:1px solid var(--border);
 }
-
 .avatar{
-  width:82px;
-  height:82px;
-  flex-shrink:0;
+  width:72px;
+  height:72px;
   border-radius:50%;
-  border:3px solid #1597ff;
-  box-shadow:0 0 25px #008cff;
+  flex-shrink:0;
+  border:2px solid var(--blue);
   background:
-    url("images/uzi-profile.jpg") center/cover no-repeat,
-    linear-gradient(145deg,#063b75,#020611);
+    url("IMG_20260721_001451_128.jpg") center/cover no-repeat;
+  box-shadow:0 0 25px rgba(0,140,255,.45);
 }
-
-.profile h2{
-  font-size:25px;
-}
-
-.verified{
-  color:#1da1ff;
-}
-
+.profile h2{font-size:23px}
+.verified{color:#1597ff}
 .online{
   margin-top:6px;
   color:var(--green);
+  font-size:13px;
 }
-
-.online span{
+.online i{
   display:inline-block;
-  width:8px;
-  height:8px;
-  background:var(--green);
+  width:8px;height:8px;
+  margin-right:5px;
   border-radius:50%;
-  box-shadow:0 0 10px var(--green);
+  background:var(--green);
+  box-shadow:0 0 9px var(--green);
 }
 
-/* BÖLÜMLER */
-
+/* BAŞLIKLAR */
 .section-title{
-  margin:32px 0 15px;
-  font-size:23px;
+  margin:28px 0 13px;
+  font-size:22px;
 }
+.section-title span{color:#249eff}
 
-.section-title span{
-  color:#239eff;
-}
-
-/* KUTUCUKLAR */
-
+/* KARTLAR */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.card{
-  min-height:145px;
-  padding:20px;
-  border-radius:23px;
-  border:1px solid var(--border);
-  background:
-    linear-gradient(145deg,rgba(10,27,48,.95),rgba(3,9,18,.96));
-  cursor:pointer;
-  transition:.25s;
-  position:relative;
-  overflow:hidden;
-}
-
-.card:active{
-  transform:scale(.97);
-}
-
-.card:hover{
-  transform:translateY(-3px);
-  border-color:#21a4ff;
-  box-shadow:0 0 28px rgba(0,143,255,.18);
-}
-
-.card-icon{
-  font-size:32px;
-  margin-bottom:13px;
-}
-
-.card h3{
-  font-size:18px;
-}
-
-.card p{
-  color:var(--muted);
-  margin-top:6px;
-  font-size:13px;
-  line-height:1.4;
-}
-
-/* HABERLER */
-
-.news{
-  display:flex;
-  flex-direction:column;
   gap:12px;
 }
-
-.news-card{
+.card{
+  min-height:140px;
   padding:18px;
+  border-radius:21px;
+  background:linear-gradient(145deg,#0a1a2e,#030914);
+  border:1px solid var(--border);
+  cursor:pointer;
+  transition:.2s;
+}
+.card:active{transform:scale(.97)}
+.card-icon{font-size:30px;margin-bottom:12px}
+.card h3{font-size:17px}
+.card p{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+
+/* GALERİ */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.gallery-item{
+  height:190px;
   border-radius:20px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#07101f;
+  cursor:pointer;
+}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+.gallery-item:active img{transform:scale(1.04)}
+
+/* HABERLER */
+.news{display:grid;gap:10px}
+.news-card{
+  display:block;
+  padding:17px;
+  border-radius:19px;
   background:#071221;
   border:1px solid rgba(21,151,255,.3);
 }
-
-.news-card small{
-  color:#35aaff;
-}
-
-.news-card h3{
-  margin-top:7px;
-  font-size:17px;
-}
-
+.news-card small{color:#35aaff}
+.news-card h3{margin-top:6px;font-size:16px}
 .news-card p{
-  margin-top:7px;
+  margin-top:6px;
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
 }
 
 /* SOSYAL */
-
 .social-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:10px;
+  gap:9px;
 }
-
 .social{
-  padding:17px 8px;
+  padding:15px 7px;
   text-align:center;
-  border-radius:18px;
+  border-radius:17px;
   background:#071221;
   border:1px solid rgba(21,151,255,.3);
-  transition:.2s;
 }
-
-.social:active{
-  transform:scale(.96);
-}
-
-.social-icon{
-  font-size:25px;
-}
-
+.social-icon{font-size:24px}
 .social-name{
-  margin-top:6px;
-  font-size:12px;
+  margin-top:5px;
   color:#c7d4e8;
+  font-size:11px;
+}
+
+/* DURUM */
+.status{
+  margin-top:22px;
+  padding:18px;
+  border-radius:20px;
+  border:1px solid rgba(50,232,117,.25);
+  background:linear-gradient(145deg,#061b18,#04100f);
+}
+.status-title{color:var(--green)}
+.status p{
+  margin-top:7px;
+  color:#9db4aa;
+  font-size:13px;
 }
 
 /* ALT MENÜ */
-
 .bottom-nav{
   position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  height:78px;
   z-index:200;
+  left:0;right:0;bottom:0;
+  height:76px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  background:rgba(3,9,18,.94);
+  background:rgba(3,9,18,.95);
   backdrop-filter:blur(18px);
-  border-top:1px solid rgba(21,151,255,.35);
+  border-top:1px solid var(--border);
 }
-
 .nav-item{
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  gap:5px;
-  color:#8495ac;
-  font-size:12px;
+  gap:4px;
+  color:#8192aa;
+  font-size:11px;
   cursor:pointer;
 }
-
-.nav-icon{
-  font-size:24px;
-}
-
+.nav-icon{font-size:23px}
 .nav-item.active{
   color:#159cff;
-  text-shadow:0 0 15px #008cff;
+  text-shadow:0 0 14px #008cff;
 }
 
 /* PANEL */
-
 .panel{
   position:fixed;
   inset:0;
-  z-index:300;
+  z-index:500;
   display:none;
-  background:rgba(0,3,10,.72);
-  backdrop-filter:blur(12px);
-  padding:20px;
-}
-
-.panel.open{
-  display:flex;
   align-items:flex-end;
   justify-content:center;
+  padding:15px;
+  background:rgba(0,3,10,.76);
+  backdrop-filter:blur(10px);
 }
-
+.panel.open{display:flex}
 .panel-box{
   width:min(650px,100%);
-  max-height:85vh;
+  max-height:86vh;
   overflow:auto;
+  padding:22px;
+  border-radius:26px 26px 0 0;
   background:#07111f;
-  border:1px solid #1597ff;
-  border-radius:28px 28px 0 0;
-  padding:24px;
+  border:1px solid var(--blue);
   box-shadow:0 -10px 60px rgba(0,125,255,.2);
 }
-
 .close{
   float:right;
+  width:38px;height:38px;
   border:0;
+  border-radius:12px;
   background:#102036;
   color:white;
-  border-radius:12px;
-  width:40px;
-  height:40px;
   font-size:20px;
 }
-
 .panel-box h2{
-  margin-bottom:18px;
+  margin-bottom:17px;
   color:#29a2ff;
 }
-
-.panel-box p{
-  color:#b6c5d8;
-  line-height:1.7;
-}
-
-.info-row{
-  padding:15px 0;
+.info{
+  padding:14px 0;
   border-bottom:1px solid rgba(255,255,255,.08);
+  color:#c5d2e3;
+}
+.panel-btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  margin-top:10px;
+  text-align:center;
+  border-radius:14px;
+  background:#1597ff;
+  color:white;
+  font-weight:bold;
+}
+input{
+  width:100%;
+  padding:15px;
+  border-radius:14px;
+  border:1px solid #1597ff;
+  background:#020914;
+  color:white;
+  outline:none;
 }
 
+/* FOOTER */
 footer{
   text-align:center;
-  margin-top:35px;
-  padding:25px;
+  margin:30px 0;
   color:#53657d;
-  font-size:12px;
+  font-size:11px;
 }
 
 /* MOBİL */
-
 @media(max-width:600px){
-
-  .topbar{
-    height:70px;
-    padding:0 16px;
-  }
-
-  .logo{
-    font-size:27px;
-  }
-
-  .hero{
-    min-height:480px;
-    border-radius:25px;
-  }
-
-  .hero h1{
-    font-size:58px;
-  }
-
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .social-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .card{
-    min-height:135px;
-    padding:16px;
-  }
-
-  .profile{
-    padding:17px;
-  }
-
-  .avatar{
-    width:70px;
-    height:70px;
-  }
+  .hero{min-height:450px}
+  .hero h1{font-size:57px}
+  .gallery-item{height:160px}
+  .card{min-height:130px;padding:15px}
 }
 </style>
 </head>
@@ -460,202 +371,165 @@ footer{
 <body>
 
 <header class="topbar">
-
   <div class="logo">1890 UZI</div>
 
-  <div class="top-buttons">
+  <div class="top-actions">
     <button class="icon-btn" onclick="openPanel('search')">⌕</button>
     <button class="icon-btn" onclick="openPanel('notifications')">🔔</button>
   </div>
-
 </header>
 
 <main class="container">
 
-  <!-- ANA FOTOĞRAF -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">● 1890 DIGITAL CENTER</div>
+    <h1>1890</h1>
+    <p>UZI • Dijital Merkez</p>
+  </div>
+</section>
 
-  <section class="hero">
+<section class="profile">
+  <div class="avatar"></div>
+  <div>
+    <h2>UZI <span class="verified">✓</span></h2>
+    <div class="online"><i></i>Çevrimiçi</div>
+  </div>
+</section>
 
-    <div class="hero-content">
+<h2 class="section-title">Hızlı <span>Erişim</span></h2>
 
-      <div class="badge">● 1890 DIGITAL CENTER</div>
+<section class="grid">
 
-      <h1>1890</h1>
+  <div class="card" onclick="openPanel('profile')">
+    <div class="card-icon">👤</div>
+    <h3>Profil</h3>
+    <p>1890 UZI profil bilgileri</p>
+  </div>
 
-      <p>UZI • Dijital Merkez</p>
+  <div class="card" onclick="openPanel('music')">
+    <div class="card-icon">🎵</div>
+    <h3>Müzik</h3>
+    <p>Müzik platformlarına ulaş</p>
+  </div>
 
-    </div>
+  <div class="card" onclick="openPanel('social')">
+    <div class="card-icon">🌐</div>
+    <h3>Sosyal Medya</h3>
+    <p>Tüm sosyal platformlar</p>
+  </div>
 
-  </section>
+  <div class="card" onclick="openPanel('gallery')">
+    <div class="card-icon">📸</div>
+    <h3>Galeri</h3>
+    <p>1890 fotoğraf arşivi</p>
+  </div>
 
+  <div class="card" onclick="openPanel('news')">
+    <div class="card-icon">📰</div>
+    <h3>Güncel Haberler</h3>
+    <p>Yeni gelişmeleri keşfet</p>
+  </div>
 
-  <!-- PROFİL -->
+  <div class="card" onclick="openPanel('system')">
+    <div class="card-icon">⚡</div>
+    <h3>1890 SYSTEM</h3>
+    <p>Dijital merkez bilgileri</p>
+  </div>
 
-  <section class="profile">
+</section>
 
-    <div class="avatar"></div>
+<h2 class="section-title">1890 <span>Galeri</span></h2>
 
-    <div>
+<section class="gallery">
 
-      <h2>UZI <span class="verified">✓</span></h2>
+  <div class="gallery-item" onclick="openImage(this)">
+    <img src="IMG_20260801_023500_914.jpg" alt="1890">
+  </div>
 
-      <div class="online">
-        <span></span> Çevrimiçi
-      </div>
+  <div class="gallery-item" onclick="openImage(this)">
+    <img src="IMG_20260810_014337_944.jpg" alt="1890">
+  </div>
 
-    </div>
+  <div class="gallery-item" onclick="openImage(this)">
+    <img src="IMG_20260721_001451_128.jpg" alt="1890">
+  </div>
 
-  </section>
+  <div class="gallery-item" onclick="openImage(this)">
+    <img src="file_00000000a530820a895ae4680d3c43ac.png" alt="1890">
+  </div>
 
+</section>
 
-  <!-- HIZLI ERİŞİM -->
+<h2 class="section-title">Güncel <span>Haberler</span></h2>
 
-  <h2 class="section-title">
-    Hızlı <span>Erişim</span>
-  </h2>
+<section class="news">
 
-  <section class="grid">
+  <a class="news-card"
+     href="https://www.google.com/search?q=UZI+1890+haberler"
+     target="_blank">
+    <small>1890 • HABERLER</small>
+    <h3>UZI hakkında güncel haberleri görüntüle →</h3>
+    <p>Güncel haber sonuçlarını aç.</p>
+  </a>
 
-    <div class="card" onclick="openPanel('profile')">
-      <div class="card-icon">👤</div>
-      <h3>UZI Profil</h3>
-      <p>Profil ve 1890 hakkında bilgiler</p>
-    </div>
+  <a class="news-card"
+     href="https://www.google.com/search?q=UZI+müzik+haberleri"
+     target="_blank">
+    <small>MÜZİK</small>
+    <h3>Yeni müzik gelişmelerini keşfet →</h3>
+    <p>Yeni yayınlar ve müzik haberleri.</p>
+  </a>
 
-    <div class="card" onclick="openPanel('music')">
-      <div class="card-icon">🎵</div>
-      <h3>Müzik</h3>
-      <p>Platformlar ve müzik bağlantıları</p>
-    </div>
+</section>
 
-    <div class="card" onclick="openPanel('social')">
-      <div class="card-icon">🌐</div>
-      <h3>Sosyal Medya</h3>
-      <p>Tüm sosyal platformlara erişim</p>
-    </div>
+<h2 class="section-title">Sosyal <span>Medya</span></h2>
 
-    <div class="card" onclick="openPanel('gallery')">
-      <div class="card-icon">📸</div>
-      <h3>Galeri</h3>
-      <p>1890 fotoğraf arşivi</p>
-    </div>
+<section class="social-grid">
 
-    <div class="card" onclick="openPanel('news')">
-      <div class="card-icon">📰</div>
-      <h3>Güncel Haberler</h3>
-      <p>Yeni gelişmeler ve haberler</p>
-    </div>
+  <a class="social" href="https://www.instagram.com/" target="_blank">
+    <div class="social-icon">◎</div>
+    <div class="social-name">Instagram</div>
+  </a>
 
-    <div class="card" onclick="openPanel('about')">
-      <div class="card-icon">⚡</div>
-      <h3>1890 SYSTEM</h3>
-      <p>Proje ve sistem bilgileri</p>
-    </div>
+  <a class="social" href="https://www.youtube.com/" target="_blank">
+    <div class="social-icon">▶</div>
+    <div class="social-name">YouTube</div>
+  </a>
 
-  </section>
+  <a class="social" href="https://www.tiktok.com/" target="_blank">
+    <div class="social-icon">♪</div>
+    <div class="social-name">TikTok</div>
+  </a>
 
+  <a class="social" href="https://x.com/" target="_blank">
+    <div class="social-icon">𝕏</div>
+    <div class="social-name">X</div>
+  </a>
 
-  <!-- HABERLER -->
+  <a class="social" href="https://open.spotify.com/" target="_blank">
+    <div class="social-icon">●</div>
+    <div class="social-name">Spotify</div>
+  </a>
 
-  <h2 class="section-title">
-    Güncel <span>Haberler</span>
-  </h2>
+  <a class="social" href="https://soundcloud.com/" target="_blank">
+    <div class="social-icon">☁</div>
+    <div class="social-name">SoundCloud</div>
+  </a>
 
-  <section class="news">
+</section>
 
-    <a class="news-card"
-       href="https://www.google.com/search?q=UZI+1890+haberler"
-       target="_blank">
+<section class="status">
+  <div class="status-title">● SYSTEM ONLINE</div>
+  <p>1890 Digital Center aktif ve mobil kullanıma hazır.</p>
+</section>
 
-      <small>1890 • HABERLER</small>
-
-      <h3>UZI hakkında güncel haberleri görüntüle →</h3>
-
-      <p>
-        Güncel sonuçlara ulaşmak için haber aramasını aç.
-      </p>
-
-    </a>
-
-    <a class="news-card"
-       href="https://www.google.com/search?q=UZI+müzik+haberleri"
-       target="_blank">
-
-      <small>MÜZİK</small>
-
-      <h3>Yeni müzik gelişmelerini keşfet →</h3>
-
-      <p>
-        Güncel müzik haberleri ve yayınları.
-      </p>
-
-    </a>
-
-  </section>
-
-
-  <!-- SOSYAL MEDYA -->
-
-  <h2 class="section-title">
-    Sosyal <span>Medya</span>
-  </h2>
-
-  <section class="social-grid">
-
-    <a class="social"
-       href="https://www.instagram.com/"
-       target="_blank">
-      <div class="social-icon">◎</div>
-      <div class="social-name">Instagram</div>
-    </a>
-
-    <a class="social"
-       href="https://www.youtube.com/"
-       target="_blank">
-      <div class="social-icon">▶</div>
-      <div class="social-name">YouTube</div>
-    </a>
-
-    <a class="social"
-       href="https://www.tiktok.com/"
-       target="_blank">
-      <div class="social-icon">♪</div>
-      <div class="social-name">TikTok</div>
-    </a>
-
-    <a class="social"
-       href="https://x.com/"
-       target="_blank">
-      <div class="social-icon">𝕏</div>
-      <div class="social-name">X</div>
-    </a>
-
-    <a class="social"
-       href="https://open.spotify.com/"
-       target="_blank">
-      <div class="social-icon">●</div>
-      <div class="social-name">Spotify</div>
-    </a>
-
-    <a class="social"
-       href="https://soundcloud.com/"
-       target="_blank">
-      <div class="social-icon">☁</div>
-      <div class="social-name">SoundCloud</div>
-    </a>
-
-  </section>
-
-
-  <footer>
-    1890 UZI • DIGITAL CENTER<br>
-    © 2026
-  </footer>
+<footer>
+  1890 UZI • DIGITAL CENTER<br>
+  © 2026
+</footer>
 
 </main>
-
-
-<!-- ALT MENÜ -->
 
 <nav class="bottom-nav">
 
@@ -681,9 +555,6 @@ footer{
 
 </nav>
 
-
-<!-- PANEL -->
-
 <div class="panel" id="panel">
 
   <div class="panel-box">
@@ -696,291 +567,142 @@ footer{
 
 </div>
 
-
 <script>
 
-const panel = document.getElementById("panel");
-const content = document.getElementById("panelContent");
+const panel=document.getElementById("panel");
+const content=document.getElementById("panelContent");
 
 function openPanel(type){
 
-  let html = "";
+  let html="";
 
   if(type==="profile"){
-
-    html = `
+    html=`
       <h2>👤 UZI Profil</h2>
-
-      <div class="info-row">
-        <b>İsim</b><br>
-        UZI
-      </div>
-
-      <div class="info-row">
-        <b>Durum</b><br>
-        <span style="color:#32e875">● Çevrimiçi</span>
-      </div>
-
-      <div class="info-row">
-        <b>Proje</b><br>
-        1890 Digital Center
-      </div>
+      <div class="info"><b>İsim:</b><br>UZI ✓</div>
+      <div class="info"><b>Durum:</b><br>🟢 Çevrimiçi</div>
+      <div class="info"><b>Merkez:</b><br>1890 Digital Center</div>
     `;
-
   }
 
   else if(type==="music"){
-
-    html = `
+    html=`
       <h2>🎵 Müzik</h2>
-
-      <p>
-        Müzik platformlarına hızlı erişim.
-      </p>
-
-      <br>
-
-      <a class="news-card"
-         href="https://open.spotify.com/"
-         target="_blank">
-         🎧 Spotify →
-      </a>
-
-      <br>
-
-      <a class="news-card"
-         href="https://www.youtube.com/"
-         target="_blank">
-         ▶ YouTube →
-      </a>
+      <div class="info">Müzik platformlarına hızlı erişim.</div>
+      <a class="panel-btn" href="https://open.spotify.com/" target="_blank">🎧 Spotify</a>
+      <a class="panel-btn" href="https://www.youtube.com/" target="_blank">▶ YouTube</a>
+      <a class="panel-btn" href="https://soundcloud.com/" target="_blank">☁ SoundCloud</a>
     `;
-
   }
 
   else if(type==="social"){
-
-    html = `
+    html=`
       <h2>🌐 Sosyal Medya</h2>
-
-      <p>
-        Sosyal platformları buradan açabilirsin.
-      </p>
-
-      <br>
-
-      <div class="social-grid">
-
-        <a class="social" href="https://www.instagram.com/" target="_blank">
-          ◎<br>Instagram
-        </a>
-
-        <a class="social" href="https://www.youtube.com/" target="_blank">
-          ▶<br>YouTube
-        </a>
-
-        <a class="social" href="https://www.tiktok.com/" target="_blank">
-          ♪<br>TikTok
-        </a>
-
-        <a class="social" href="https://x.com/" target="_blank">
-          𝕏<br>X
-        </a>
-
-        <a class="social" href="https://open.spotify.com/" target="_blank">
-          ●<br>Spotify
-        </a>
-
-        <a class="social" href="https://soundcloud.com/" target="_blank">
-          ☁<br>SoundCloud
-        </a>
-
-      </div>
+      <div class="info">Platformlardan birini seç.</div>
+      <a class="panel-btn" href="https://www.instagram.com/" target="_blank">◎ Instagram</a>
+      <a class="panel-btn" href="https://www.youtube.com/" target="_blank">▶ YouTube</a>
+      <a class="panel-btn" href="https://www.tiktok.com/" target="_blank">♪ TikTok</a>
+      <a class="panel-btn" href="https://x.com/" target="_blank">𝕏 X</a>
     `;
-
   }
 
   else if(type==="gallery"){
-
-    html = `
-      <h2>📸 1890 Galeri</h2>
-
-      <p>
-        Fotoğrafları GitHub'a yüklediğimizde
-        burada tam ekran galeri olarak gösterebiliriz.
-      </p>
-
-      <br>
-
-      <div style="
-        height:220px;
-        border-radius:20px;
-        background:
-        url('images/1890-gallery.jpg') center/cover,
-        linear-gradient(145deg,#07376b,#020611);
-        border:1px solid #1597ff;
-      "></div>
+    html=`
+      <h2>📸 Galeri</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="IMG_20260801_023500_914.jpg">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_20260810_014337_944.jpg">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_20260721_001451_128.jpg">
+        </div>
+        <div class="gallery-item">
+          <img src="file_00000000a530820a895ae4680d3c43ac.png">
+        </div>
+      </div>
     `;
-
   }
 
   else if(type==="news"){
-
-    html = `
+    html=`
       <h2>📰 Güncel Haberler</h2>
-
-      <p>
-        Güncel haber aramalarına buradan ulaşabilirsin.
-      </p>
-
-      <br>
-
-      <a class="news-card"
+      <div class="info">Güncel sonuçlara ulaş.</div>
+      <a class="panel-btn"
          href="https://www.google.com/search?q=UZI+1890+haberler"
          target="_blank">
          🔎 UZI 1890 Haberleri
       </a>
-
-      <br>
-
-      <a class="news-card"
+      <a class="panel-btn"
          href="https://www.google.com/search?q=UZI+yeni+şarkı"
          target="_blank">
          🎵 Yeni Müzik Haberleri
       </a>
     `;
-
   }
 
-  else if(type==="about"){
-
-    html = `
+  else if(type==="system"){
+    html=`
       <h2>⚡ 1890 SYSTEM</h2>
-
-      <p>
-        1890 UZI Digital Center.
-        Modern, mobil uyumlu ve etkileşimli
-        bir dijital merkez olarak tasarlanmıştır.
-      </p>
-
-      <br>
-
-      <p>
-        Sistem: ONLINE<br>
-        Arayüz: MOBILE<br>
-        Durum: AKTİF
-      </p>
+      <div class="info">Sistem: ONLINE</div>
+      <div class="info">Arayüz: MOBILE</div>
+      <div class="info">Tema: NEON DARK</div>
+      <div class="info">Durum: AKTİF</div>
     `;
-
   }
 
   else if(type==="search"){
-
-    html = `
+    html=`
       <h2>🔎 Arama</h2>
-
-      <input
-        id="searchInput"
-        placeholder="UZI veya 1890 ara..."
-        style="
-          width:100%;
-          padding:16px;
-          border-radius:15px;
-          border:1px solid #1597ff;
-          background:#020914;
-          color:white;
-          font-size:16px;
-        "
-      >
-
-      <br><br>
-
-      <button
-        onclick="googleSearch()"
-        style="
-          width:100%;
-          padding:15px;
-          border:0;
-          border-radius:15px;
-          background:#1597ff;
-          color:white;
-          font-weight:bold;
-        ">
-        Arama Yap
-      </button>
+      <input id="searchInput" placeholder="UZI veya 1890 ara...">
+      <button class="panel-btn" onclick="googleSearch()">Arama Yap</button>
     `;
-
   }
 
   else if(type==="notifications"){
-
-    html = `
+    html=`
       <h2>🔔 Bildirimler</h2>
-
-      <div class="info-row">
-        Sistem aktif.
-      </div>
-
-      <div class="info-row">
-        1890 Digital Center hazır.
-      </div>
-
-      <div class="info-row">
-        Yeni içerikler yakında.
-      </div>
+      <div class="info">🟢 Sistem aktif.</div>
+      <div class="info">1890 Digital Center hazır.</div>
+      <div class="info">Yeni içerikler yakında.</div>
     `;
-
   }
 
   else if(type==="chat"){
-
-    html = `
+    html=`
       <h2>💬 Sohbet</h2>
-
-      <p>
-        Sohbet sistemi için sonraki güncellemede
-        gerçek zamanlı altyapı ekleyebiliriz.
-      </p>
+      <div class="info">
+        Sohbet merkezi hazır.
+      </div>
+      <div class="info">
+        Gerçek zamanlı sohbet altyapısı sonraki
+        güncellemede eklenebilir.
+      </div>
     `;
-
   }
 
   else if(type==="settings"){
-
-    html = `
+    html=`
       <h2>⚙ Ayarlar</h2>
-
-      <div class="info-row">
-        Tema: Gece / Neon
-      </div>
-
-      <div class="info-row">
-        Arayüz: Mobil uyumlu
-      </div>
-
-      <div class="info-row">
-        Sistem: 1890
-      </div>
+      <div class="info">Tema: Neon Dark</div>
+      <div class="info">Arayüz: Mobil uyumlu</div>
+      <div class="info">Sistem: 1890</div>
     `;
   }
 
-  content.innerHTML = html;
+  content.innerHTML=html;
   panel.classList.add("open");
 }
-
 
 function closePanel(){
   panel.classList.remove("open");
 }
 
-
 panel.addEventListener("click",function(e){
-
-  if(e.target===panel){
-    closePanel();
-  }
-
+  if(e.target===panel) closePanel();
 });
-
 
 function googleSearch(){
 
@@ -993,28 +715,39 @@ function googleSearch(){
       "_blank"
     );
   }
-
 }
 
-
 function scrollTopPage(){
-
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
+}
 
+function openImage(el){
+
+  const img=el.querySelector("img");
+
+  if(!img) return;
+
+  content.innerHTML=`
+    <h2>📸 1890 Fotoğraf</h2>
+    <img
+      src="${img.src}"
+      style="
+        width:100%;
+        max-height:70vh;
+        object-fit:contain;
+        border-radius:20px;
+        border:1px solid #1597ff;
+      "
+    >
+  `;
+
+  panel.classList.add("open");
 }
 
 </script>
-<!-- UZI ANA SAYFA EKLENTİSİ -->
-<div style="text-align:center;padding:25px 15px;margin:20px 0;border:1px solid #1597ff;border-radius:20px;background:linear-gradient(145deg,#07101f,#020611);box-shadow:0 0 25px rgba(21,151,255,.25);">
-  <div style="font-size:28px;font-weight:800;color:#1597ff;text-shadow:0 0 15px #1597ff;">
-    1890 UZI
-  </div>
-  <div style="font-size:16px;color:#91a3bd;margin-top:8px;">
-    Dijital Merkez • Çevrimiçi
-  </div>
-</div>
+
 </body>
-      </html>
+</html>
