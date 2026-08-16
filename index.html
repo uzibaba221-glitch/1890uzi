@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#020611">
-
 <title>1890 UZI | Digital Center</title>
 
 <style>
@@ -14,235 +13,266 @@
   padding:0;
 }
 
-:root{
-  --bg:#020611;
-  --bg2:#061329;
-  --card:#071426;
-  --card2:#0b1b32;
-  --blue:#1597ff;
-  --cyan:#00d9ff;
-  --text:#f4f8ff;
-  --muted:#8fa5c0;
-  --green:#32e875;
-  --red:#ff4d67;
-  --border:rgba(21,151,255,.38);
-  --shadow:0 0 35px rgba(0,125,255,.16);
-}
-
 html{
   scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  color:var(--text);
   background:
-    radial-gradient(circle at 50% -10%,#0a3970 0%,transparent 42%),
-    radial-gradient(circle at 0% 40%,rgba(0,100,255,.10),transparent 30%),
-    var(--bg);
+    radial-gradient(circle at 50% -10%,#06498a 0%,#020611 38%,#01030a 100%);
+  color:#f4f8ff;
   min-height:100vh;
   padding-bottom:95px;
 }
 
-body.light{
-  --bg:#eef6ff;
-  --bg2:#dcecff;
-  --card:#ffffff;
-  --card2:#edf6ff;
-  --text:#071426;
-  --muted:#52657c;
-  --border:rgba(0,110,220,.25);
-  background:#eef6ff;
-}
-
-button,
-input{
-  font-family:inherit;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
 button{
+  font-family:inherit;
   -webkit-tap-highlight-color:transparent;
 }
 
-a{
-  text-decoration:none;
-  color:inherit;
+:root{
+  --blue:#1597ff;
+  --cyan:#00d9ff;
+  --dark:#020611;
+  --card:#071426;
+  --card2:#0b1b32;
+  --text:#f4f8ff;
+  --muted:#91a3bd;
+  --green:#32e875;
+  --border:rgba(21,151,255,.42);
 }
 
 /* TOP BAR */
 
 .topbar{
+  height:74px;
   position:sticky;
   top:0;
   z-index:100;
-  height:72px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 18px;
-  background:rgba(2,6,17,.86);
+  background:rgba(2,6,17,.88);
   backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-
-body.light .topbar{
-  background:rgba(238,246,255,.88);
+  border-bottom:1px solid rgba(21,151,255,.4);
 }
 
 .logo{
   font-size:28px;
   font-weight:900;
+  color:#20a2ff;
   letter-spacing:1px;
-  color:#27a4ff;
-  text-shadow:0 0 22px #008cff;
+  text-shadow:0 0 25px #008cff;
 }
 
-.top-actions{
+.top-buttons{
   display:flex;
-  gap:9px;
+  gap:10px;
 }
 
 .icon-btn{
-  width:47px;
-  height:47px;
-  border-radius:16px;
+  width:52px;
+  height:52px;
+  border-radius:18px;
   border:1px solid var(--border);
-  background:rgba(6,19,36,.9);
-  color:var(--text);
-  font-size:22px;
+  background:#061020;
+  color:white;
+  font-size:25px;
   cursor:pointer;
+  box-shadow:0 0 22px rgba(0,130,255,.14);
 }
 
-body.light .icon-btn{
-  background:#fff;
-}
-
-/* CONTAINER */
+/* MAIN */
 
 .container{
-  width:min(1080px,92%);
+  width:min(1100px,94%);
   margin:auto;
 }
 
 /* HERO */
 
 .hero{
+  margin-top:24px;
+  min-height:620px;
   position:relative;
-  min-height:590px;
-  margin-top:22px;
   overflow:hidden;
-  border-radius:30px;
-  border:1px solid var(--border);
+  border-radius:32px;
+  border:1px solid #1597ff;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(1,4,12,.98) 0%,
+      rgba(1,4,12,.48) 48%,
+      rgba(1,4,12,.12) 100%
+    ),
+    url("images/1890-cover.jpg") center/cover no-repeat;
+
   box-shadow:
-    0 0 55px rgba(0,125,255,.22),
-    inset 0 0 80px rgba(0,0,0,.5);
-  background:#020611;
+    0 0 55px rgba(0,119,255,.24),
+    inset 0 0 100px rgba(0,0,0,.55);
 }
 
-.hero-photo{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.72;
-}
-
-.hero-overlay{
+.hero:before{
+  content:"";
   position:absolute;
   inset:0;
   background:
     linear-gradient(
-      0deg,
-      rgba(1,5,14,.98) 0%,
-      rgba(1,5,14,.55) 45%,
-      rgba(1,5,14,.08) 100%
-    ),
-    radial-gradient(
-      circle at center,
+      120deg,
       transparent 20%,
-      rgba(0,80,180,.15) 100%
+      rgba(0,217,255,.08),
+      transparent 80%
     );
+  pointer-events:none;
 }
 
 .hero-content{
   position:absolute;
-  left:25px;
-  right:25px;
-  bottom:30px;
+  left:28px;
+  right:28px;
+  bottom:28px;
 }
 
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding:9px 15px;
+  gap:9px;
+  padding:10px 16px;
   border-radius:30px;
-  color:#72c4ff;
-  background:rgba(4,21,43,.84);
-  border:1px solid rgba(21,151,255,.55);
+  border:1px solid rgba(0,217,255,.55);
+  background:rgba(5,25,48,.8);
+  color:#75caff;
+  box-shadow:0 0 20px rgba(0,160,255,.15);
   font-size:13px;
-  margin-bottom:15px;
-  backdrop-filter:blur(10px);
+  font-weight:bold;
 }
 
-.badge-dot{
-  width:8px;
-  height:8px;
+.status-dot{
+  width:10px;
+  height:10px;
   border-radius:50%;
   background:#32e875;
   box-shadow:0 0 12px #32e875;
 }
 
 .hero h1{
+  margin-top:18px;
   font-size:76px;
   line-height:.9;
-  color:#269fff;
-  letter-spacing:3px;
+  color:#239eff;
   text-shadow:
     0 0 15px #008cff,
-    0 0 45px rgba(0,140,255,.7);
+    0 0 40px rgba(0,140,255,.45);
 }
 
 .hero-sub{
-  margin-top:13px;
+  margin-top:14px;
   font-size:19px;
-  color:#e1edff;
+  color:#e0ebf8;
 }
 
 .hero-buttons{
   display:flex;
-  gap:10px;
-  margin-top:22px;
+  gap:12px;
+  margin-top:25px;
 }
 
-.hero-btn{
-  padding:13px 17px;
-  border-radius:15px;
-  border:1px solid rgba(21,151,255,.55);
-  background:rgba(4,20,40,.82);
-  color:white;
+.primary-btn,
+.secondary-btn{
+  border-radius:20px;
+  padding:16px 22px;
+  font-size:16px;
   font-weight:bold;
   cursor:pointer;
 }
 
-.hero-btn.primary{
-  background:#1597ff;
-  border-color:#1597ff;
+.primary-btn{
+  border:0;
+  background:linear-gradient(135deg,#1597ff,#0069d9);
+  color:white;
+  box-shadow:0 8px 25px rgba(0,130,255,.3);
+}
+
+.secondary-btn{
+  background:rgba(2,10,23,.75);
+  color:white;
+  border:1px solid #1597ff;
+}
+
+/* LIVE BAR */
+
+.live-bar{
+  margin-top:15px;
+  padding:16px 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#071b31,#040b17);
+  border:1px solid rgba(21,151,255,.32);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.live-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#cbd9eb;
+}
+
+.live-left b{
+  color:#32e875;
+}
+
+.live-time{
+  color:#71869f;
+  font-size:12px;
+}
+
+/* SECTION */
+
+.section{
+  margin-top:32px;
+}
+
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.section-title{
+  font-size:24px;
+}
+
+.section-title span{
+  color:#209eff;
+}
+
+.section-more{
+  color:#4db2ff;
+  font-size:13px;
 }
 
 /* PROFILE */
 
 .profile{
-  margin-top:16px;
-  padding:18px;
-  border-radius:24px;
-  background:linear-gradient(145deg,var(--card2),var(--card));
+  padding:20px;
+  border-radius:25px;
+  background:linear-gradient(145deg,#09182c,#040a14);
   border:1px solid var(--border);
   display:flex;
   align-items:center;
   gap:16px;
-  box-shadow:var(--shadow);
+  box-shadow:0 0 30px rgba(0,110,255,.1);
 }
 
 .avatar{
@@ -252,9 +282,9 @@ body.light .icon-btn{
   border-radius:50%;
   border:3px solid #1597ff;
   background:
-    url("IMG_20260801_023500_914.jpg") center/cover no-repeat,
-    linear-gradient(145deg,#06417d,#020611);
-  box-shadow:0 0 25px rgba(0,140,255,.55);
+    url("images/uzi-profile.jpg") center/cover no-repeat,
+    linear-gradient(145deg,#063b75,#020611);
+  box-shadow:0 0 25px rgba(0,140,255,.45);
 }
 
 .profile h2{
@@ -262,96 +292,59 @@ body.light .icon-btn{
 }
 
 .verified{
-  color:#1597ff;
+  color:#1da1ff;
 }
 
-.status{
+.online{
   margin-top:7px;
-  color:var(--green);
-  font-size:14px;
+  color:#32e875;
+  font-size:13px;
 }
 
-.status-dot{
-  display:inline-block;
-  width:8px;
-  height:8px;
-  margin-right:5px;
-  border-radius:50%;
-  background:var(--green);
-  box-shadow:0 0 10px var(--green);
-}
+/* QUICK GRID */
 
-/* STATS */
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:14px;
-}
-
-.stat{
-  padding:16px 8px;
-  text-align:center;
-  border-radius:19px;
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.stat-number{
-  font-size:23px;
-  font-weight:900;
-  color:#269fff;
-}
-
-.stat-label{
-  margin-top:5px;
-  font-size:11px;
-  color:var(--muted);
-}
-
-/* TITLES */
-
-.section-title{
-  margin:30px 0 14px;
-  font-size:23px;
-}
-
-.section-title span{
-  color:#209eff;
-}
-
-/* QUICK CARDS */
-
-.grid{
+.quick-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  gap:13px;
 }
 
 .card{
-  position:relative;
-  min-height:145px;
+  min-height:150px;
   padding:19px;
-  overflow:hidden;
-  border-radius:22px;
-  border:1px solid var(--border);
+  border-radius:23px;
   background:
-    linear-gradient(145deg,rgba(9,28,50,.98),rgba(3,10,20,.98));
-  cursor:pointer;
-  transition:.2s;
-}
-
-body.light .card{
-  background:linear-gradient(145deg,#fff,#eaf5ff);
+    linear-gradient(145deg,rgba(10,29,51,.96),rgba(3,9,18,.98));
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+  transition:.25s;
 }
 
 .card:active{
   transform:scale(.97);
 }
 
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#25a7ff;
+  box-shadow:0 0 28px rgba(0,143,255,.2);
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  right:-45px;
+  top:-45px;
+  background:#008cff;
+  opacity:.07;
+  border-radius:50%;
+}
+
 .card-icon{
-  font-size:31px;
+  font-size:32px;
   margin-bottom:12px;
 }
 
@@ -360,55 +353,124 @@ body.light .card{
 }
 
 .card p{
-  margin-top:6px;
+  margin-top:7px;
   color:var(--muted);
-  font-size:12px;
+  font-size:13px;
   line-height:1.45;
 }
 
-.card-glow{
-  position:absolute;
-  width:90px;
-  height:90px;
-  right:-35px;
-  bottom:-35px;
-  border-radius:50%;
-  background:#1597ff;
-  opacity:.08;
-  filter:blur(15px);
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
 }
 
-/* FEATURE */
+.stat{
+  padding:20px 8px;
+  text-align:center;
+  border-radius:20px;
+  background:#071426;
+  border:1px solid rgba(21,151,255,.3);
+}
 
-.feature{
-  position:relative;
-  margin-top:15px;
-  padding:22px;
-  overflow:hidden;
-  border-radius:24px;
+.stat-number{
+  font-size:25px;
+  font-weight:900;
+  color:#219fff;
+}
+
+.stat-label{
+  margin-top:5px;
+  color:#879bb4;
+  font-size:11px;
+}
+
+/* MUSIC */
+
+.music-card{
+  padding:20px;
+  border-radius:25px;
   background:
-    linear-gradient(145deg,#08203c,#030a16);
-  border:1px solid var(--border);
+    linear-gradient(135deg,#081c35,#040a14);
+  border:1px solid rgba(21,151,255,.4);
 }
 
-.feature h3{
-  font-size:22px;
-  color:#31a7ff;
+.music-title{
+  font-size:19px;
+  font-weight:bold;
 }
 
-.feature p{
-  margin-top:9px;
+.music-sub{
   color:var(--muted);
-  line-height:1.6;
+  margin-top:6px;
+  font-size:13px;
 }
 
-.feature button{
-  margin-top:15px;
-  padding:12px 18px;
-  border:0;
-  border-radius:14px;
-  background:#1597ff;
-  color:#fff;
+.platforms{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  margin-top:18px;
+}
+
+.platform{
+  padding:15px 8px;
+  text-align:center;
+  border-radius:17px;
+  background:#061020;
+  border:1px solid rgba(21,151,255,.3);
+}
+
+.platform-icon{
+  font-size:25px;
+}
+
+.platform-name{
+  margin-top:6px;
+  font-size:11px;
+  color:#c9d7e8;
+}
+
+/* GALLERY */
+
+.gallery{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:5px;
+}
+
+.gallery::-webkit-scrollbar{
+  display:none;
+}
+
+.gallery-item{
+  min-width:78%;
+  height:260px;
+  border-radius:25px;
+  overflow:hidden;
+  scroll-snap-align:center;
+  border:1px solid var(--border);
+  position:relative;
+  background:#071426;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:35px 17px 16px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
   font-weight:bold;
 }
 
@@ -417,37 +479,26 @@ body.light .card{
 .news{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:11px;
 }
 
 .news-card{
-  padding:17px;
+  padding:18px;
   border-radius:20px;
-  background:var(--card);
-  border:1px solid var(--border);
+  background:#071221;
+  border:1px solid rgba(21,151,255,.3);
 }
 
-.news-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.news-card small{
+  color:#35aaff;
 }
 
-.news small{
-  color:#28a4ff;
-}
-
-.news-date{
-  color:var(--muted);
-  font-size:11px;
-}
-
-.news h3{
-  margin-top:8px;
+.news-card h3{
+  margin-top:7px;
   font-size:16px;
 }
 
-.news p{
+.news-card p{
   margin-top:6px;
   color:var(--muted);
   font-size:13px;
@@ -462,11 +513,16 @@ body.light .card{
 }
 
 .social{
-  padding:17px 7px;
+  padding:17px 8px;
   text-align:center;
   border-radius:18px;
-  background:var(--card);
-  border:1px solid var(--border);
+  background:#071221;
+  border:1px solid rgba(21,151,255,.3);
+  transition:.2s;
+}
+
+.social:active{
+  transform:scale(.96);
 }
 
 .social-icon{
@@ -474,65 +530,64 @@ body.light .card{
 }
 
 .social-name{
-  margin-top:7px;
-  color:var(--muted);
-  font-size:12px;
+  margin-top:6px;
+  font-size:11px;
+  color:#c7d4e8;
 }
 
-/* MUSIC */
+/* ABOUT */
 
-.music-box{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-
-.music{
-  padding:18px;
-  border-radius:20px;
-  background:var(--card);
+.about{
+  padding:22px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#08182c,#030914);
   border:1px solid var(--border);
 }
 
-.music-icon{
-  font-size:30px;
+.about h3{
+  color:#27a2ff;
+  font-size:21px;
 }
 
-.music h3{
-  margin-top:8px;
+.about p{
+  color:#9db0c7;
+  line-height:1.7;
+  margin-top:10px;
+  font-size:14px;
 }
 
-.music p{
-  margin-top:5px;
-  color:var(--muted);
-  font-size:12px;
-}
-
-/* GALLERY */
-
-.gallery{
+.system{
+  margin-top:18px;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
 }
 
-.gallery-item{
-  height:180px;
-  border-radius:20px;
-  overflow:hidden;
-  border:1px solid var(--border);
-  background:#061328;
+.system-item{
+  padding:13px;
+  background:#061020;
+  border-radius:15px;
+  border:1px solid rgba(21,151,255,.22);
 }
 
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.3s;
+.system-item small{
+  color:#6f849e;
 }
 
-.gallery-item:active img{
-  transform:scale(1.04);
+.system-item b{
+  display:block;
+  margin-top:4px;
+  color:#35aaff;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  margin-top:35px;
+  padding:25px;
+  color:#53657d;
+  font-size:12px;
 }
 
 /* BOTTOM NAV */
@@ -542,155 +597,56 @@ body.light .card{
   left:0;
   right:0;
   bottom:0;
+  height:82px;
   z-index:200;
-  height:78px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  background:rgba(3,9,18,.94);
+  background:rgba(3,9,18,.95);
   backdrop-filter:blur(20px);
-  border-top:1px solid var(--border);
-}
-
-body.light .bottom-nav{
-  background:rgba(255,255,255,.94);
+  border-top:1px solid rgba(21,151,255,.38);
 }
 
 .nav-item{
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
-  gap:4px;
-  color:#8495ac;
+  align-items:center;
+  gap:5px;
+  color:#7e90a8;
   font-size:11px;
-  cursor:pointer;
 }
 
 .nav-icon{
-  font-size:23px;
+  font-size:24px;
 }
 
 .nav-item.active{
   color:#159cff;
-  text-shadow:0 0 14px #008cff;
+  text-shadow:0 0 15px #008cff;
 }
 
-/* PANEL */
+/* TOAST */
 
-.panel{
+.toast{
   position:fixed;
-  inset:0;
+  left:50%;
+  bottom:95px;
+  transform:translate(-50%,20px);
+  padding:13px 18px;
+  border-radius:16px;
+  background:#0a1d34;
+  border:1px solid #1597ff;
+  color:white;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
   z-index:500;
-  display:none;
-  padding:15px;
-  align-items:flex-end;
-  justify-content:center;
-  background:rgba(0,2,9,.72);
-  backdrop-filter:blur(10px);
+  white-space:nowrap;
 }
 
-.panel.open{
-  display:flex;
-}
-
-.panel-box{
-  width:min(650px,100%);
-  max-height:86vh;
-  overflow:auto;
-  padding:22px;
-  border-radius:27px 27px 0 0;
-  background:#07111f;
-  border:1px solid #1597ff;
-  box-shadow:0 -10px 60px rgba(0,125,255,.25);
-}
-
-body.light .panel-box{
-  background:#f7fbff;
-}
-
-.close{
-  float:right;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:12px;
-  background:#112239;
-  color:white;
-  font-size:21px;
-}
-
-.panel-box h2{
-  margin-bottom:20px;
-  color:#29a2ff;
-}
-
-.info-row{
-  padding:15px 0;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  color:var(--text);
-}
-
-.info-row span{
-  color:var(--muted);
-}
-
-/* SEARCH */
-
-.search-input{
-  width:100%;
-  padding:16px;
-  border-radius:16px;
-  border:1px solid #1597ff;
-  outline:none;
-  background:#020914;
-  color:#fff;
-  font-size:16px;
-}
-
-.search-button{
-  width:100%;
-  margin-top:12px;
-  padding:15px;
-  border:0;
-  border-radius:16px;
-  background:#1597ff;
-  color:white;
-  font-weight:bold;
-}
-
-/* CHAT */
-
-.chat{
-  min-height:260px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  gap:10px;
-}
-
-.message{
-  max-width:85%;
-  padding:12px 15px;
-  border-radius:16px;
-  background:#10243d;
-  color:#dcecff;
-}
-
-.message.user{
-  align-self:flex-end;
-  background:#1597ff;
-  color:#fff;
-}
-
-/* FOOTER */
-
-footer{
-  margin-top:35px;
-  padding:25px 10px;
-  text-align:center;
-  color:#53657d;
-  font-size:11px;
-  line-height:1.7;
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
 }
 
 /* MOBILE */
@@ -698,81 +654,50 @@ footer{
 @media(max-width:600px){
 
   .topbar{
-    height:68px;
+    height:70px;
   }
 
   .logo{
-    font-size:26px;
+    font-size:27px;
   }
 
   .hero{
-    min-height:560px;
-    border-radius:25px;
+    min-height:610px;
+    border-radius:28px;
   }
 
   .hero h1{
-    font-size:62px;
+    font-size:64px;
   }
 
   .hero-sub{
     font-size:17px;
   }
 
-  .hero-content{
-    left:20px;
-    right:20px;
-    bottom:25px;
+  .hero-buttons{
+    gap:10px;
   }
 
-  .grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .card{
-    min-height:140px;
-    padding:16px;
-  }
-
-  .stats{
-    gap:7px;
-  }
-
-  .stat{
-    padding:14px 5px;
-  }
-
-  .social-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .music-box{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .gallery{
-    grid-template-columns:1fr 1fr;
+  .primary-btn,
+  .secondary-btn{
+    padding:15px 17px;
+    font-size:15px;
   }
 
   .gallery-item{
-    height:150px;
+    min-width:84%;
   }
-
 }
 
-@media(max-width:370px){
+@media(min-width:800px){
 
-  .hero h1{
-    font-size:52px;
+  .quick-grid{
+    grid-template-columns:repeat(3,1fr);
   }
 
-  .grid{
-    grid-template-columns:1fr;
+  .gallery-item{
+    min-width:31%;
   }
-
-  .social-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
 }
 </style>
 </head>
@@ -783,13 +708,13 @@ footer{
 
   <div class="logo">1890 UZI</div>
 
-  <div class="top-actions">
+  <div class="top-buttons">
 
-    <button class="icon-btn" onclick="openPanel('search')">
+    <button class="icon-btn" onclick="searchSite()">
       🔎
     </button>
 
-    <button class="icon-btn" onclick="openPanel('notifications')">
+    <button class="icon-btn" onclick="showToast('🔔 Yeni içerikler yakında!')">
       🔔
     </button>
 
@@ -800,77 +725,196 @@ footer{
 
 <main class="container">
 
-  <!-- HERO -->
+<!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
 
-    <img
-      class="hero-photo"
-      src="IMG_20260801_023500_914.jpg"
-      alt="1890 UZI">
+  <div class="hero-content">
 
-    <div class="hero-overlay"></div>
+    <div class="badge">
+      <span class="status-dot"></span>
+      1890 DIGITAL CENTER
+    </div>
 
-    <div class="hero-content">
+    <h1>1890</h1>
 
-      <div class="badge">
-        <span class="badge-dot"></span>
-        1890 DIGITAL CENTER
-      </div>
+    <div class="hero-sub">
+      UZI • Dijital Merkez
+    </div>
 
-      <h1>1890</h1>
+    <div class="hero-buttons">
 
-      <div class="hero-sub">
-        UZI • Dijital Merkez
-      </div>
+      <button class="primary-btn"
+              onclick="document.getElementById('quick').scrollIntoView({behavior:'smooth'})">
+        ⚡ Keşfet
+      </button>
 
-      <div class="hero-buttons">
-
-        <button
-          class="hero-btn primary"
-          onclick="openPanel('about')">
-          ⚡ Keşfet
-        </button>
-
-        <button
-          class="hero-btn"
-          onclick="openPanel('gallery')">
-          📸 Galeri
-        </button>
-
-      </div>
+      <button class="secondary-btn"
+              onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+        📸 Galeri
+      </button>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- PROFILE -->
+<!-- LIVE -->
 
-  <section class="profile">
+<div class="live-bar">
+
+  <div class="live-left">
+    <span class="status-dot"></span>
+    <b>Sistem Çevrimiçi</b>
+  </div>
+
+  <div class="live-time">
+    1890 SYSTEM • ONLINE
+  </div>
+
+</div>
+
+
+<!-- PROFILE -->
+
+<section class="section">
+
+  <div class="profile">
 
     <div class="avatar"></div>
 
     <div>
 
-      <h2>
-        UZI
-        <span class="verified">✓</span>
-      </h2>
+      <h2>UZI <span class="verified">✓</span></h2>
 
-      <div class="status">
-        <span class="status-dot"></span>
-        Çevrimiçi
+      <div class="online">
+        ● Çevrimiçi
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- STATS -->
+<!-- QUICK -->
 
-  <section class="stats">
+<section class="section" id="quick">
+
+  <div class="section-head">
+
+    <h2 class="section-title">
+      Hızlı <span>Erişim</span>
+    </h2>
+
+    <div class="section-more">
+      1890 SYSTEM
+    </div>
+
+  </div>
+
+
+  <div class="quick-grid">
+
+    <a class="card" href="#music">
+
+      <div class="card-icon">🎵</div>
+
+      <h3>Müzik</h3>
+
+      <p>
+        Müzik platformlarına hızlı erişim.
+      </p>
+
+    </a>
+
+
+    <a class="card" href="#gallery">
+
+      <div class="card-icon">📸</div>
+
+      <h3>Galeri</h3>
+
+      <p>
+        1890 fotoğraf arşivini keşfet.
+      </p>
+
+    </a>
+
+
+    <a class="card" href="#social">
+
+      <div class="card-icon">🌐</div>
+
+      <h3>Sosyal Medya</h3>
+
+      <p>
+        Platformlara tek yerden ulaş.
+      </p>
+
+    </a>
+
+
+    <a class="card" href="#news">
+
+      <div class="card-icon">📰</div>
+
+      <h3>Haberler</h3>
+
+      <p>
+        Güncel gelişmeleri takip et.
+      </p>
+
+    </a>
+
+
+    <a class="card" href="#stats">
+
+      <div class="card-icon">📊</div>
+
+      <h3>1890 İstatistik</h3>
+
+      <p>
+        Dijital merkez bilgileri.
+      </p>
+
+    </a>
+
+
+    <a class="card" href="#about">
+
+      <div class="card-icon">⚡</div>
+
+      <h3>1890 SYSTEM</h3>
+
+      <p>
+        Sistem hakkında daha fazla bilgi.
+      </p>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="section" id="stats">
+
+  <div class="section-head">
+
+    <h2 class="section-title">
+      1890 <span>İstatistik</span>
+    </h2>
+
+  </div>
+
+
+  <div class="stats">
 
     <div class="stat">
       <div class="stat-number">1890</div>
@@ -883,274 +927,320 @@ footer{
     </div>
 
     <div class="stat">
-      <div class="stat-number">2026</div>
-      <div class="stat-label">DIGITAL</div>
+      <div class="stat-number">∞</div>
+      <div class="stat-label">ENERGY</div>
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- QUICK -->
+<!-- MUSIC -->
 
-  <h2 class="section-title">
-    Hızlı <span>Erişim</span>
-  </h2>
+<section class="section" id="music">
 
-  <section class="grid">
+  <div class="section-head">
 
-    <div class="card" onclick="openPanel('profile')">
-      <div class="card-icon">👤</div>
-      <h3>UZI Profil</h3>
-      <p>Profil ve 1890 hakkında bilgiler.</p>
-      <div class="card-glow"></div>
+    <h2 class="section-title">
+      Müzik <span>Merkezi</span>
+    </h2>
+
+  </div>
+
+
+  <div class="music-card">
+
+    <div class="music-title">
+      🎧 UZI Müzik Dünyası
     </div>
 
-    <div class="card" onclick="openPanel('music')">
-      <div class="card-icon">🎵</div>
-      <h3>Müzik</h3>
-      <p>Müzik platformlarına hızlı erişim.</p>
-      <div class="card-glow"></div>
+    <div class="music-sub">
+      Sevdiğin platforma tek dokunuşla geç.
     </div>
 
-    <div class="card" onclick="openPanel('social')">
-      <div class="card-icon">🌐</div>
-      <h3>Sosyal Medya</h3>
-      <p>Sosyal platformları keşfet.</p>
-      <div class="card-glow"></div>
+
+    <div class="platforms">
+
+      <a class="platform"
+         href="https://open.spotify.com/"
+         target="_blank">
+
+        <div class="platform-icon">🎧</div>
+        <div class="platform-name">Spotify</div>
+
+      </a>
+
+
+      <a class="platform"
+         href="https://www.youtube.com/"
+         target="_blank">
+
+        <div class="platform-icon">▶️</div>
+        <div class="platform-name">YouTube</div>
+
+      </a>
+
+
+      <a class="platform"
+         href="https://soundcloud.com/"
+         target="_blank">
+
+        <div class="platform-icon">☁️</div>
+        <div class="platform-name">SoundCloud</div>
+
+      </a>
+
     </div>
 
-    <div class="card" onclick="openPanel('gallery')">
-      <div class="card-icon">📸</div>
-      <h3>Galeri</h3>
-      <p>1890 fotoğraf arşivi.</p>
-      <div class="card-glow"></div>
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+
+  <div class="section-head">
+
+    <h2 class="section-title">
+      1890 <span>Galeri</span>
+    </h2>
+
+    <div class="section-more">
+      Kaydır →
     </div>
 
-    <div class="card" onclick="openPanel('news')">
-      <div class="card-icon">📰</div>
-      <h3>Haberler</h3>
-      <p>Güncel gelişmeleri görüntüle.</p>
-      <div class="card-glow"></div>
-    </div>
-
-    <div class="card" onclick="openPanel('system')">
-      <div class="card-icon">⚡</div>
-      <h3>1890 SYSTEM</h3>
-      <p>Sistem bilgileri ve özellikler.</p>
-      <div class="card-glow"></div>
-    </div>
-
-  </section>
+  </div>
 
 
-  <!-- FEATURE -->
+  <div class="gallery">
 
-  <section class="feature">
+    <div class="gallery-item">
 
-    <h3>⚡ 1890 DIGITAL CENTER</h3>
+      <img src="images/1890-cover.jpg"
+           alt="1890">
 
-    <p>
-      UZI için hazırlanan dijital merkez.
-      Müzik, sosyal medya, galeri, haberler
-      ve diğer içeriklere tek yerden ulaş.
-    </p>
-
-    <button onclick="openPanel('about')">
-      Sistemi İncele →
-    </button>
-
-  </section>
-
-
-  <!-- NEWS -->
-
-  <h2 class="section-title">
-    Güncel <span>Haberler</span>
-  </h2>
-
-  <section class="news">
-
-    <a
-      class="news-card"
-      href="https://www.google.com/search?q=UZI+1890+haberler"
-      target="_blank">
-
-      <div class="news-top">
-        <small>1890 • HABERLER</small>
-        <span class="news-date">Güncel</span>
+      <div class="gallery-caption">
+        1890 • Digital Center
       </div>
 
-      <h3>UZI hakkında güncel haberleri görüntüle →</h3>
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img src="images/uzi-profile.jpg"
+           alt="UZI">
+
+      <div class="gallery-caption">
+        UZI • Profile
+      </div>
+
+    </div>
+
+
+    <div class="gallery-item">
+
+      <img src="images/1890-gallery.jpg"
+           alt="1890 Galeri"
+           onerror="this.style.display='none'">
+
+      <div class="gallery-caption">
+        1890 Gallery
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NEWS -->
+
+<section class="section" id="news">
+
+  <div class="section-head">
+
+    <h2 class="section-title">
+      Güncel <span>Haberler</span>
+    </h2>
+
+  </div>
+
+
+  <div class="news">
+
+    <a class="news-card"
+       href="https://www.google.com/search?q=UZI+1890+haberler"
+       target="_blank">
+
+      <small>1890 • HABER</small>
+
+      <h3>
+        UZI hakkında güncel haberleri görüntüle →
+      </h3>
 
       <p>
-        Güncel sonuçlar için haber aramasını aç.
+        Güncel arama sonuçlarını aç.
       </p>
 
     </a>
 
 
-    <a
-      class="news-card"
-      href="https://www.google.com/search?q=UZI+yeni+şarkı"
-      target="_blank">
+    <a class="news-card"
+       href="https://www.google.com/search?q=UZI+yeni+şarkı"
+       target="_blank">
 
-      <div class="news-top">
-        <small>MÜZİK</small>
-        <span class="news-date">Yeni</span>
-      </div>
+      <small>MÜZİK</small>
 
-      <h3>Yeni müzik gelişmelerini keşfet →</h3>
+      <h3>
+        Yeni müzik gelişmelerini keşfet →
+      </h3>
 
       <p>
-        Şarkılar, yayınlar ve müzik haberleri.
+        Yeni şarkılar ve müzik haberleri.
       </p>
 
     </a>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- MUSIC -->
+<!-- SOCIAL -->
 
-  <h2 class="section-title">
-    Müzik <span>Platformları</span>
-  </h2>
+<section class="section" id="social">
 
-  <section class="music-box">
+  <div class="section-head">
 
-    <a
-      class="music"
-      href="https://open.spotify.com/"
-      target="_blank">
+    <h2 class="section-title">
+      Sosyal <span>Medya</span>
+    </h2>
 
-      <div class="music-icon">🎧</div>
-      <h3>Spotify</h3>
-      <p>Müzikleri dinle →</p>
-
-    </a>
-
-    <a
-      class="music"
-      href="https://www.youtube.com/"
-      target="_blank">
-
-      <div class="music-icon">▶️</div>
-      <h3>YouTube</h3>
-      <p>Videoları aç →</p>
-
-    </a>
-
-    <a
-      class="music"
-      href="https://soundcloud.com/"
-      target="_blank">
-
-      <div class="music-icon">☁️</div>
-      <h3>SoundCloud</h3>
-      <p>Müzikleri keşfet →</p>
-
-    </a>
-
-    <a
-      class="music"
-      href="https://music.apple.com/"
-      target="_blank">
-
-      <div class="music-icon">🎶</div>
-      <h3>Apple Music</h3>
-      <p>Platformu aç →</p>
-
-    </a>
-
-  </section>
+  </div>
 
 
-  <!-- GALLERY -->
+  <div class="social-grid">
 
-  <h2 class="section-title">
-    1890 <span>Galeri</span>
-  </h2>
+    <a class="social"
+       href="https://www.instagram.com/"
+       target="_blank">
 
-  <section class="gallery">
-
-    <div class="gallery-item">
-      <img
-        src="IMG_20260801_023500_914.jpg"
-        alt="1890 fotoğraf">
-    </div>
-
-    <div class="gallery-item">
-      <img
-        src="IMG_20260801_023500_914.jpg"
-        alt="1890 fotoğraf">
-    </div>
-
-  </section>
-
-
-  <!-- SOCIAL -->
-
-  <h2 class="section-title">
-    Sosyal <span>Medya</span>
-  </h2>
-
-  <section class="social-grid">
-
-    <a
-      class="social"
-      href="https://www.instagram.com/"
-      target="_blank">
       <div class="social-icon">◎</div>
       <div class="social-name">Instagram</div>
+
     </a>
 
-    <a
-      class="social"
-      href="https://www.youtube.com/"
-      target="_blank">
+
+    <a class="social"
+       href="https://www.youtube.com/"
+       target="_blank">
+
       <div class="social-icon">▶</div>
       <div class="social-name">YouTube</div>
+
     </a>
 
-    <a
-      class="social"
-      href="https://www.tiktok.com/"
-      target="_blank">
+
+    <a class="social"
+       href="https://www.tiktok.com/"
+       target="_blank">
+
       <div class="social-icon">♪</div>
       <div class="social-name">TikTok</div>
+
     </a>
 
-    <a
-      class="social"
-      href="https://x.com/"
-      target="_blank">
+
+    <a class="social"
+       href="https://x.com/"
+       target="_blank">
+
       <div class="social-icon">𝕏</div>
       <div class="social-name">X</div>
+
     </a>
 
-    <a
-      class="social"
-      href="https://open.spotify.com/"
-      target="_blank">
+
+    <a class="social"
+       href="https://open.spotify.com/"
+       target="_blank">
+
       <div class="social-icon">●</div>
       <div class="social-name">Spotify</div>
+
     </a>
 
-    <a
-      class="social"
-      href="https://soundcloud.com/"
-      target="_blank">
+
+    <a class="social"
+       href="https://soundcloud.com/"
+       target="_blank">
+
       <div class="social-icon">☁</div>
       <div class="social-name">SoundCloud</div>
+
     </a>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <footer>
-    1890 UZI • DIGITAL CENTER<br>
-    SYSTEM ONLINE • © 2026
-  </footer>
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+  <div class="about">
+
+    <h3>⚡ 1890 SYSTEM</h3>
+
+    <p>
+      1890 UZI Digital Center; müzik, galeri,
+      sosyal medya, haberler ve özel içerikleri
+      tek bir mobil merkezde toplamayı amaçlayan
+      modern bir dijital platformdur.
+    </p>
+
+
+    <div class="system">
+
+      <div class="system-item">
+        <small>Sistem</small>
+        <b>ONLINE</b>
+      </div>
+
+      <div class="system-item">
+        <small>Arayüz</small>
+        <b>MOBILE</b>
+      </div>
+
+      <div class="system-item">
+        <small>Versiyon</small>
+        <b>1890 V2</b>
+      </div>
+
+      <div class="system-item">
+        <small>Durum</small>
+        <b>AKTİF</b>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  1890 UZI • DIGITAL CENTER<br><br>
+  © 2026 • 1890 SYSTEM
+
+</footer>
 
 </main>
 
@@ -1159,500 +1249,72 @@ footer{
 
 <nav class="bottom-nav">
 
-  <div
-    class="nav-item active"
-    onclick="goHome()">
+  <a class="nav-item active" href="#top"
+     onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
 
     <div class="nav-icon">⌂</div>
     Ana Sayfa
 
-  </div>
+  </a>
 
-  <div
-    class="nav-item"
-    onclick="openPanel('chat')">
 
-    <div class="nav-icon">💬</div>
-    Sohbet
+  <a class="nav-item" href="#music">
 
-  </div>
+    <div class="nav-icon">🎵</div>
+    Müzik
 
-  <div
-    class="nav-item"
-    onclick="openPanel('settings')">
+  </a>
 
-    <div class="nav-icon">⚙</div>
-    Ayarlar
 
-  </div>
+  <a class="nav-item" href="#gallery">
 
-  <div
-    class="nav-item"
-    onclick="openPanel('profile')">
+    <div class="nav-icon">📸</div>
+    Galeri
+
+  </a>
+
+
+  <a class="nav-item" href="#social">
 
     <div class="nav-icon">👤</div>
     Profil
 
-  </div>
+  </a>
 
 </nav>
 
 
-<!-- PANEL -->
-
-<div
-  class="panel"
-  id="panel">
-
-  <div class="panel-box">
-
-    <button
-      class="close"
-      onclick="closePanel()">
-      ×
-    </button>
-
-    <div id="panelContent"></div>
-
-  </div>
-
-</div>
+<div class="toast" id="toast"></div>
 
 
 <script>
 
-const panel =
-  document.getElementById("panel");
+function showToast(message){
 
-const content =
-  document.getElementById("panelContent");
+  const toast=document.getElementById("toast");
 
+  toast.textContent=message;
 
-function openPanel(type){
+  toast.classList.add("show");
 
-  let html = "";
+  setTimeout(function(){
 
+    toast.classList.remove("show");
 
-  if(type==="profile"){
-
-    html = `
-      <h2>👤 UZI Profil</h2>
-
-      <div class="info-row">
-        <b>İsim</b><br>
-        <span>UZI</span>
-      </div>
-
-      <div class="info-row">
-        <b>Durum</b><br>
-        <span style="color:#32e875">
-          ● Çevrimiçi
-        </span>
-      </div>
-
-      <div class="info-row">
-        <b>Proje</b><br>
-        <span>1890 Digital Center</span>
-      </div>
-
-      <div class="info-row">
-        <b>Sistem</b><br>
-        <span>1890 SYSTEM</span>
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="music"){
-
-    html = `
-      <h2>🎵 Müzik</h2>
-
-      <p>
-        Müzik platformlarına hızlı erişim.
-      </p>
-
-      <br>
-
-      <div class="music-box">
-
-        <a
-          class="music"
-          href="https://open.spotify.com/"
-          target="_blank">
-          🎧
-          <h3>Spotify</h3>
-          <p>Aç →</p>
-        </a>
-
-        <a
-          class="music"
-          href="https://www.youtube.com/"
-          target="_blank">
-          ▶️
-          <h3>YouTube</h3>
-          <p>Aç →</p>
-        </a>
-
-        <a
-          class="music"
-          href="https://soundcloud.com/"
-          target="_blank">
-          ☁️
-          <h3>SoundCloud</h3>
-          <p>Aç →</p>
-        </a>
-
-        <a
-          class="music"
-          href="https://music.apple.com/"
-          target="_blank">
-          🎶
-          <h3>Apple Music</h3>
-          <p>Aç →</p>
-        </a>
-
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="social"){
-
-    html = `
-      <h2>🌐 Sosyal Medya</h2>
-
-      <p>
-        Platformları buradan açabilirsin.
-      </p>
-
-      <br>
-
-      <div class="social-grid">
-
-        <a class="social"
-           href="https://www.instagram.com/"
-           target="_blank">
-          ◎<br>Instagram
-        </a>
-
-        <a class="social"
-           href="https://www.youtube.com/"
-           target="_blank">
-          ▶<br>YouTube
-        </a>
-
-        <a class="social"
-           href="https://www.tiktok.com/"
-           target="_blank">
-          ♪<br>TikTok
-        </a>
-
-        <a class="social"
-           href="https://x.com/"
-           target="_blank">
-          𝕏<br>X
-        </a>
-
-        <a class="social"
-           href="https://open.spotify.com/"
-           target="_blank">
-          ●<br>Spotify
-        </a>
-
-        <a class="social"
-           href="https://soundcloud.com/"
-           target="_blank">
-          ☁<br>SoundCloud
-        </a>
-
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="gallery"){
-
-    html = `
-      <h2>📸 1890 Galeri</h2>
-
-      <p>
-        1890 fotoğraf arşivi.
-      </p>
-
-      <br>
-
-      <div class="gallery">
-
-        <div class="gallery-item">
-          <img
-            src="IMG_20260801_023500_914.jpg"
-            alt="1890">
-        </div>
-
-        <div class="gallery-item">
-          <img
-            src="IMG_20260801_023500_914.jpg"
-            alt="1890">
-        </div>
-
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="news"){
-
-    html = `
-      <h2>📰 Güncel Haberler</h2>
-
-      <p>
-        Güncel UZI haberlerine ulaş.
-      </p>
-
-      <br>
-
-      <a
-        class="news-card"
-        href="https://www.google.com/search?q=UZI+1890+haberler"
-        target="_blank">
-
-        🔎 UZI 1890 Haberleri →
-
-      </a>
-
-      <br>
-
-      <a
-        class="news-card"
-        href="https://www.google.com/search?q=UZI+yeni+şarkı"
-        target="_blank">
-
-        🎵 Yeni Müzik Haberleri →
-
-      </a>
-    `;
-
-  }
-
-
-  else if(type==="system"){
-
-    html = `
-      <h2>⚡ 1890 SYSTEM</h2>
-
-      <div class="info-row">
-        Sistem<br>
-        <span>ONLINE</span>
-      </div>
-
-      <div class="info-row">
-        Arayüz<br>
-        <span>MOBILE READY</span>
-      </div>
-
-      <div class="info-row">
-        Tasarım<br>
-        <span>NEON DIGITAL</span>
-      </div>
-
-      <div class="info-row">
-        Versiyon<br>
-        <span>1890 • 2026</span>
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="search"){
-
-    html = `
-      <h2>🔎 Arama</h2>
-
-      <input
-        class="search-input"
-        id="searchInput"
-        placeholder="UZI veya 1890 ara...">
-
-      <button
-        class="search-button"
-        onclick="googleSearch()">
-
-        Arama Yap
-
-      </button>
-    `;
-
-  }
-
-
-  else if(type==="notifications"){
-
-    html = `
-      <h2>🔔 Bildirimler</h2>
-
-      <div class="info-row">
-        🟢 Sistem aktif.
-      </div>
-
-      <div class="info-row">
-        🔵 1890 Digital Center hazır.
-      </div>
-
-      <div class="info-row">
-        ⚡ Yeni içerikler yakında.
-      </div>
-
-      <div class="info-row">
-        📸 Galeri sistemi aktif.
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="chat"){
-
-    html = `
-      <h2>💬 1890 Sohbet</h2>
-
-      <div class="chat">
-
-        <div class="message">
-          1890 Digital Center'a hoş geldin.
-        </div>
-
-        <div class="message user">
-          Sistem aktif 🚀
-        </div>
-
-        <div class="message">
-          Yeni özellikler yakında eklenecek.
-        </div>
-
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="settings"){
-
-    html = `
-      <h2>⚙ Ayarlar</h2>
-
-      <div class="info-row">
-        <b>Tema</b><br>
-        <span>Gece / Neon</span>
-      </div>
-
-      <button
-        class="search-button"
-        onclick="toggleTheme()">
-
-        🌙 Temayı Değiştir
-
-      </button>
-
-      <div class="info-row">
-        <b>Arayüz</b><br>
-        <span>Mobil uyumlu</span>
-      </div>
-
-      <div class="info-row">
-        <b>Sistem</b><br>
-        <span>1890 Digital Center</span>
-      </div>
-    `;
-
-  }
-
-
-  else if(type==="about"){
-
-    html = `
-      <h2>⚡ 1890 Digital Center</h2>
-
-      <p>
-        1890 UZI için hazırlanmış modern
-        dijital merkez.
-      </p>
-
-      <br>
-
-      <div class="info-row">
-        ✓ Mobil uyumlu
-      </div>
-
-      <div class="info-row">
-        ✓ Galeri sistemi
-      </div>
-
-      <div class="info-row">
-        ✓ Müzik bağlantıları
-      </div>
-
-      <div class="info-row">
-        ✓ Sosyal medya
-      </div>
-
-      <div class="info-row">
-        ✓ Haber sistemi
-      </div>
-
-      <div class="info-row">
-        ✓ Arama sistemi
-      </div>
-    `;
-
-  }
-
-
-  content.innerHTML = html;
-
-  panel.classList.add("open");
-}
-
-
-function closePanel(){
-
-  panel.classList.remove("open");
+  },2200);
 
 }
 
 
-panel.addEventListener(
-  "click",
-  function(e){
+function searchSite(){
 
-    if(e.target === panel){
-      closePanel();
-    }
+  const q=prompt("1890 içinde ne aramak istiyorsun?");
 
-  }
-);
-
-
-function googleSearch(){
-
-  const input =
-    document.getElementById("searchInput");
-
-  if(!input) return;
-
-  const q =
-    input.value.trim();
-
-  if(q){
+  if(q && q.trim()!==""){
 
     window.open(
       "https://www.google.com/search?q="+
-      encodeURIComponent(q),
+      encodeURIComponent("UZI 1890 "+q),
       "_blank"
     );
 
@@ -1661,24 +1323,56 @@ function googleSearch(){
 }
 
 
-function goHome(){
+/* Sayfa kaydırıldığında aktif menü */
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
+const sections=[
+  "quick",
+  "music",
+  "gallery",
+  "social"
+];
+
+window.addEventListener("scroll",function(){
+
+  let current="";
+
+  sections.forEach(function(id){
+
+    const section=document.getElementById(id);
+
+    if(section && window.scrollY >= section.offsetTop-180){
+
+      current=id;
+
+    }
+
   });
 
-}
+  document.querySelectorAll(".nav-item").forEach(function(item){
 
+    item.classList.remove("active");
 
-function toggleTheme(){
+  });
 
-  document.body.classList.toggle("light");
+  if(current==="music"){
+    document.querySelectorAll(".nav-item")[1].classList.add("active");
+  }
 
-}
+  else if(current==="gallery"){
+    document.querySelectorAll(".nav-item")[2].classList.add("active");
+  }
 
+  else if(current==="social"){
+    document.querySelectorAll(".nav-item")[3].classList.add("active");
+  }
+
+  else{
+    document.querySelectorAll(".nav-item")[0].classList.add("active");
+  }
+
+});
 
 </script>
 
 </body>
-      </html>
+  </html>
